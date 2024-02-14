@@ -29,4 +29,9 @@ public class Funcionario implements IFuncionario{
     public String toString() {
         return "Funcionario{" + "nome='" + nome + '\'' + ", salario=" + salario + '}';
     }
+
+    @Override
+    public void promover() {
+
+    }
 }
