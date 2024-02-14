@@ -48,5 +48,14 @@ public class Turma {
         }
 
         listaAlunos.remove(alunoEscolhido);
-}
+    }
+
+    @Override
+    public String toString() {
+        return "Turma{" +
+                "listaAlunos=" + listaAlunos +
+                ", anoCriacao=" + anoCriacao +
+                ", curso=" + curso +
+                '}';
+    }
 }
