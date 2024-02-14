@@ -1,4 +1,7 @@
 public class Professor {
+
+    private static int idGeral = 0;
+    private int idProfessor;
     private String nome;
     private int idade;
     private int tempoTrabalho;
@@ -7,9 +10,18 @@ public class Professor {
         this.nome = nome;
         this.idade = idade;
         this.tempoTrabalho = tempoTrabalho;
+
+        idGeral += 1;
+        setIdProfessor(idGeral);
     }
 
-    public Professor(){}
+    public int getIdProfessor() {
+        return idProfessor;
+    }
+
+    public void setIdProfessor(int idProfessor) {
+        this.idProfessor = idProfessor;
+    }
 
     public String getNome() {
         return nome;
