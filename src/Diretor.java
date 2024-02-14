@@ -33,5 +33,13 @@ public class Diretor extends Funcionario{
         this.tempoTrabalho = tempoTrabalho;
     }
 
+    @Override
+    public String toString() {
+        return "Diretor{" +
+                "idDiretor=" + idDiretor +
+                ", nome='" + nome + '\'' +
+                ", tempoTrabalho=" + tempoTrabalho +
+                '}';
+    }
 }
 

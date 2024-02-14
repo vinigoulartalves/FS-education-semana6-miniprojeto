@@ -26,4 +26,12 @@ public class Curso {
     public void setProfessorCurso(String professorCurso) {
         this.professorCurso = professorCurso;
     }
+
+    @Override
+    public String toString() {
+        return "Curso{" +
+                "nomeCurso='" + nomeCurso + '\'' +
+                ", professorCurso='" + professorCurso + '\'' +
+                '}';
+    }
 }
