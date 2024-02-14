@@ -1,7 +1,9 @@
-public class Professor {
+
+public class Professor extends Funcionario{
 
     private static int idGeral = 0;
     private int idProfessor;
+
     private String nome;
     private int idade;
     private int tempoTrabalho;
@@ -45,6 +47,11 @@ public class Professor {
 
     public void setTempoTrabalho(int tempoTrabalho) {
         this.tempoTrabalho = tempoTrabalho;
+    }
+
+    @Override
+    public String toString() {
+        return "Professor{" + "nome='" + nome + '\'' + ", idade=" + idade + ", tempoTrabalho=" + tempoTrabalho + '}';
     }
 }
 
