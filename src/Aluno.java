@@ -1,5 +1,6 @@
 public class Aluno {
 
+    public int id;
     private String nome;
     private int idade;
 
