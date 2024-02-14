@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 public class Turma {
     public List<Aluno> listaAlunos = new ArrayList<>();
     private int anoCriacao;
@@ -38,7 +42,7 @@ public class Turma {
         Aluno alunoEscolhido = null;
 
         for(Aluno aluno : listaAlunos){
-            if(aluno.id == idAluno){
+            if(aluno.getIdAluno() == idAluno){
                 alunoEscolhido = aluno;
             }
         }
