@@ -1,5 +1,4 @@
-
-public class Professor extends Funcionario{
+public class Professor extends Funcionario {
 
     private static int idGeral = 0;
     private int idProfessor;
@@ -15,6 +14,18 @@ public class Professor extends Funcionario{
 
         idGeral += 1;
         setIdProfessor(idGeral);
+    }
+
+    public static CargoFuncinario[] getTodosStatusMatriculas() {
+        return CargoFuncinario.values();
+    }
+
+    public static CargoFuncinario getStatusMatriculaPorNome(String nome) {
+        try {
+            return CargoFuncinario.valueOf(nome);
+        } catch (IllegalArgumentException e) {
+            return null;
+        }
     }
 
     public int getIdProfessor() {
