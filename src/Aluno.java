@@ -2,7 +2,7 @@ public class Aluno {
 
     private static int idGeral = 0;
     private int idAluno;
-
+    private StatusMatricula statusMatricula = StatusMatricula.TRANCADO;
     private String nome;
     private int idade;
 
@@ -12,6 +12,29 @@ public class Aluno {
 
         idGeral += 1;
         setIdAluno(idGeral);
+    }
+
+    public Aluno() {
+    }
+
+    public static StatusMatricula[] getTodosStatusMatriculas() {
+        return StatusMatricula.values();
+    }
+
+    public static StatusMatricula getStatusMatriculaPorNome(String nome) {
+        try {
+            return StatusMatricula.valueOf(nome);
+        } catch (IllegalArgumentException e) {
+            return null;
+        }
+    }
+
+    public StatusMatricula getStatusMatricula() {
+        return statusMatricula;
+    }
+
+    public void setStatusMatricula(StatusMatricula statusMatricula) {
+        this.statusMatricula = statusMatricula;
     }
 
     public int getIdAluno() {

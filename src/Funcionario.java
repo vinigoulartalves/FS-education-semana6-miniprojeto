@@ -1,9 +1,13 @@
-public class Funcionario implements IFuncionario{
+public class Funcionario implements IFuncionario {
 
     private String nome;
     private double salario;
 
-    public Funcionario(){}
+    private CargoFuncinario cargoFuncinario = CargoFuncinario.INICIANTE;
+
+    public Funcionario() {
+    }
+
     public Funcionario(String nome, double salario) {
         this.nome = nome;
         this.salario = salario;
