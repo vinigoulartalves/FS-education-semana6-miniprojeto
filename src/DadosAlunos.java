@@ -5,11 +5,11 @@ import java.util.Scanner;
 public class DadosAlunos {
     public static List<Aluno> listaAlunos= new ArrayList<>();
 
-    public void adicionarAluno(Aluno aluno){
+    public static void adicionarAluno(Aluno aluno){
         listaAlunos.add(aluno);
     }
 
-    public Aluno buscarIdAluno(Scanner scanner){
+    public static Aluno buscarIdAluno(Scanner scanner){
         System.out.println("Digite o id do aluno que você quer selecionar");
         listarAlunos();
 
@@ -30,7 +30,7 @@ public class DadosAlunos {
         }
     }
 
-    public void removerAluno(Scanner scanner){
+    public static void removerAluno(Scanner scanner){
         Aluno aluno = buscarIdAluno(scanner);
         listaAlunos.remove(aluno);
     }
