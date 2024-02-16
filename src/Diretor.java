@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Diretor extends Funcionario{
 
     private static int idGeral = 0;
@@ -32,6 +34,35 @@ public class Diretor extends Funcionario{
     public void setTempoTrabalho(int tempoTrabalho) {
         this.tempoTrabalho = tempoTrabalho;
     }
+
+    public static void addProfEmDados(Scanner scanner){
+        Professor professor = DadosProfessores.buscarIdProfessor(scanner);
+        DadosProfessores.adicionarProfessor(professor);
+    }
+
+    public static void removerProfEmDados(Scanner scanner){
+        Professor professor = DadosProfessores.buscarIdProfessor(scanner);
+        DadosProfessores.removerProfessor(scanner);
+    }
+
+    public static void addAlunoEmDados(Scanner scanner){
+        Aluno aluno = DadosAlunos.buscarIdAluno(scanner);
+        DadosAlunos.adicionarAluno(aluno);
+    }
+
+    public static void removerAlunoEmDados(Scanner scanner){
+        Aluno aluno = DadosAlunos.buscarIdAluno(scanner);
+        DadosAlunos.removerAluno(scanner);
+    }
+
+    public static void listarProfessores(){
+        DadosProfessores.listarProfessores();
+    }
+
+    public static void listarAlunos(){
+        DadosAlunos.listarAlunos();
+    }
+
 
     @Override
     public String toString() {

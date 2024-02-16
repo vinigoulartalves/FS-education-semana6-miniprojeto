@@ -23,6 +23,11 @@ public class Turma {
         this.curso = curso;
     }
 
+    public Turma(Curso curso, int anoCriacao){
+        this.curso = curso;
+        this.anoCriacao = anoCriacao;
+    }
+
     public void listarAlunos(){
         for(Aluno aluno : listaAlunos){
             System.out.println("Nome: " + aluno);

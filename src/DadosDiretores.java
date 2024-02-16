@@ -5,11 +5,11 @@ import java.util.Scanner;
 public class DadosDiretores {
     public static List<Diretor> listaDiretores= new ArrayList<>();
 
-    public void adicionarDiretor(Diretor diretor){
+    public static void adicionarDiretor(Diretor diretor){
         listaDiretores.add(diretor);
     }
 
-    public Diretor buscarIdDiretor(Scanner scanner){
+    public static Diretor buscarIdDiretor(Scanner scanner){
         System.out.println("Digite o id do diretor que você quer selecionar");
         listarDiretores();
 
