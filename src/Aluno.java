@@ -1,12 +1,25 @@
 public class Aluno {
 
-    public int id;
+    private static int idGeral = 0;
+    private int idAluno;
+
     private String nome;
     private int idade;
 
     public Aluno(String nome, int idade) {
         this.nome = nome;
         this.idade = idade;
+
+        idGeral += 1;
+        setIdAluno(idGeral);
+    }
+
+    public int getIdAluno() {
+        return idAluno;
+    }
+
+    public void setIdAluno(int idAluno) {
+        this.idAluno = idAluno;
     }
 
     public String getNome() {
