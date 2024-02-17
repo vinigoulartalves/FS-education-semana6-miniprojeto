@@ -36,6 +36,10 @@ public class Funcionario implements IFuncionario {
 
     @Override
     public void promover() {
-
+        if(cargoFuncinario.equals(CargoFuncinario.INICIANTE)){
+            cargoFuncinario = CargoFuncinario.EXPERIENTE;
+        } else if(cargoFuncinario.equals(CargoFuncinario.EXPERIENTE)){
+            cargoFuncinario = CargoFuncinario.AVANCADO;
+        }
     }
 }
