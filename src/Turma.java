@@ -42,7 +42,7 @@ public class Turma {
         Aluno alunoEscolhido = null;
 
         for(Aluno aluno : listaAlunos){
-            if(aluno.getIdAluno() == idAluno){
+            if(aluno.id == idAluno){
                 alunoEscolhido = aluno;
             }
         }
