@@ -112,9 +112,9 @@ public class Main {
 
                 break;
             case 2:
-                System.out.println("Menu de diretor");
                 Diretor diretorEscolhido = DadosDiretores.buscarIdDiretor(entrada);
-                System.out.println(diretorEscolhido.getNome());
+                subMenuDiretorProfessor(diretorEscolhido);
+
                 break;
             case 0:
                 return;
@@ -192,6 +192,97 @@ public class Main {
                 DadosAlunos.adicionarAluno(novoAluno, entrada);
 
                 //TODO Metodo cadastro de aluno
+                break;
+            case 2:
+                System.out.println("Menu de aluno");
+
+                Aluno alunoEscolhido = DadosAlunos.buscarIdAluno(entrada);
+                System.out.println("Bem Vindo " + alunoEscolhido.getNome() + "!");
+
+                //TODO Menu de aluno
+                break;
+            case 0:
+                return;
+            default:
+                System.out.println("Valor inválido! Escolha uma opção válida!");
+                break;
+        }
+    }
+
+    public static void subMenuDiretorProfessor(Diretor diretorEscolhido) {
+
+        Scanner entrada = new Scanner(System.in);
+
+        System.out.println("GERENCIAR PROFESSORES");
+        System.out.println("1 - ADICIONAR ");
+        System.out.println("2 - REMOVER ");
+        System.out.println("3 - PROMOVER ");
+        System.out.println("4 - LISTAR ");
+        System.out.println("0 - SAIR ");
+        System.out.println();
+        System.out.print("SELECIONE UMA OPÇÃO: ");
+        int escolhaMenu = entrada.nextInt();
+        entrada.nextLine();
+        System.out.println();
+
+        switch (escolhaMenu) {
+            case 1:
+                System.out.println("ADICONAR PROFESSOR");
+
+                DadosProfessores.adicionarProfessor(entrada);
+
+                //TODO Metodo promoção de professores
+                break;
+            case 2:
+                System.out.println("REMOVER PROFESSOR");
+
+                DadosProfessores.removerProfessor(entrada);
+
+                //TODO Metodo adiconar professor
+                break;
+            case 3:
+                System.out.println("PROMOVER PROFESSOR");
+
+                //TODO remover professor
+                break;
+            case 4:
+                System.out.println("LISTAR PROFESSORES");
+
+                //TODO remover professor
+                break;
+            case 0:
+                break;
+
+            default:
+                System.out.println("Valor inválido! Escolha uma opção válida!");
+                break;
+        }
+        menuAcoesDiretor(diretorEscolhido);
+    }
+
+    public static void menuAcoesDiretor(Diretor diretorEscolhido) {
+
+        Scanner entrada = new Scanner(System.in);
+
+        System.out.println(diretorEscolhido.getNome());
+        System.out.println("1 - GERENCIAR PROFESSORES ");
+        System.out.println("2 - GERENCIAR ALUNOS ");
+        System.out.println("3 - GERENCIAR CURSOS ");
+        System.out.println("0 - SAIR ");
+        System.out.println();
+        System.out.print("SELECIONE UMA OPÇÃO: ");
+        int escolhaMenu = entrada.nextInt();
+        entrada.nextLine();
+        System.out.println();
+
+        switch (escolhaMenu) {
+            case 1:
+                System.out.println("Menu gerenciamento professores");
+
+                Aluno novoAluno = new Aluno();
+                DadosAlunos.adicionarAluno(novoAluno, entrada);
+
+                //TODO Metodo gerenciamento professores
                 break;
             case 2:
                 System.out.println("Menu de aluno");

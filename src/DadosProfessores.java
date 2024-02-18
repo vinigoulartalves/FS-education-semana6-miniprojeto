@@ -51,7 +51,7 @@ public class DadosProfessores {
 
         Professor novoProfessor = new Professor(nome, salario, tempoTrabalho, idade);
         listaProfessores.add(novoProfessor);
-        System.out.println("Professor " + novoProfessor.getNome() + " adicionado.");
+        System.out.println("Professor " + novoProfessor.getNome() + " adicionado!");
         return novoProfessor;
     }
 
@@ -67,6 +67,7 @@ public class DadosProfessores {
         while (idProfessorEscolhido <= 0 || idProfessorEscolhido >= listaProfessores.size() + 1) {
             System.out.println("ID inválido. Digite um ID válido:");
             idProfessorEscolhido = scanner.nextInt();
+            scanner.nextLine();
         }
         for(Professor professor : listaProfessores){
             if(professor.getIdProfessor() == idProfessorEscolhido){
@@ -86,5 +87,6 @@ public class DadosProfessores {
     public static void removerProfessor(Scanner scanner){
         Professor professor = buscarIdProfessor(scanner);
         listaProfessores.remove(professor);
+        System.out.println("Professor " + professor.getNome() + " removido!");
     }
 }
