@@ -28,6 +28,10 @@ public class Turma {
         this.anoCriacao = anoCriacao;
     }
 
+    public Turma(){
+
+    }
+
     public void listarAlunos(){
         for(Aluno aluno : listaAlunos){
             System.out.println("Nome: " + aluno);
@@ -53,6 +57,18 @@ public class Turma {
         }
 
         listaAlunos.remove(alunoEscolhido);
+    }
+
+    public void adicionarTurma(Curso curso, Scanner entrada){
+        entrada = new Scanner(System.in);
+
+        int anoCriacao;
+
+        System.out.println("Insira o ano de criação da turma: ");
+        anoCriacao = entrada.nextInt();
+
+        setAnoCriacao(anoCriacao);
+        setCurso(curso);
     }
 
     @Override

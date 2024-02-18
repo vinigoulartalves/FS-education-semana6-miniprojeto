@@ -63,6 +63,25 @@ public class Diretor extends Funcionario{
         DadosAlunos.listarAlunos();
     }
 
+    public static void promoverProfessor(Scanner scanner){
+        Professor professor = DadosProfessores.buscarIdProfessor(scanner);
+        professor.promover();
+    }
+
+
+
+    public static void criarTurma(Scanner scanner){
+        Curso curso = new Curso();
+        curso.adicionarCurso(scanner);
+
+        Turma turma = new Turma();
+        turma.adicionarTurma(curso, scanner);
+
+        DadosTurmas.adicionarTurma(turma);
+    }
+
+
+
 
     @Override
     public String toString() {
