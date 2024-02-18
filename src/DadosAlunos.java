@@ -3,20 +3,40 @@ import java.util.List;
 import java.util.Scanner;
 
 public class DadosAlunos {
-    public static List<Aluno> listaAlunos= new ArrayList<>();
+    public static List<Aluno> listaAlunos = new ArrayList<>();
 
-    public static void adicionarAluno(Aluno aluno){
-        listaAlunos.add(aluno);
+    public static void adicionarAluno(Aluno aluno, Scanner entrada) {
+
+        entrada = new Scanner(System.in);
+
+        String nome;
+        int idade;
+
+        System.out.println("Insira o nome: ");
+        nome = entrada.nextLine();
+        System.out.println("Insira a idade: ");
+        idade = entrada.nextInt();
+        entrada.nextLine();
+
+        Aluno novoAluno = new Aluno(nome, idade);
+        listaAlunos.add(novoAluno);
+        System.out.println("Aluno " + novoAluno.getNome() + " adicionado.");
     }
 
-    public static Aluno buscarIdAluno(Scanner scanner){
-        System.out.println("Digite o id do aluno que você quer selecionar");
+    public static Aluno buscarIdAluno(Scanner scanner) {
+        System.out.println("Alunos Cadastrados: ");
         listarAlunos();
+        System.out.println("Digite o id do aluno que você quer selecionar");
 
         int idAlunoEscolhido = scanner.nextInt();
+        scanner.nextLine();
         Aluno alunoEscolhido = null;
-        for(Aluno aluno : listaAlunos){
-            if(aluno.getIdAluno() == idAlunoEscolhido){
+        while (idAlunoEscolhido <= 0 || idAlunoEscolhido >= listaAlunos.size() + 1) {
+            System.out.println("ID inválido. Digite um ID válido:");
+            idAlunoEscolhido = scanner.nextInt();
+        }
+        for (Aluno aluno : listaAlunos) {
+            if (aluno.getIdAluno() == idAlunoEscolhido) {
                 alunoEscolhido = aluno;
             }
         }
@@ -24,17 +44,16 @@ public class DadosAlunos {
         return alunoEscolhido;
     }
 
-    public static void listarAlunos(){
-        for(Aluno aluno : listaAlunos){
+    public static void listarAlunos() {
+        for (Aluno aluno : listaAlunos) {
             System.out.println("[" + aluno.getIdAluno() + "] - " + aluno.getNome());
         }
     }
 
-    public static void removerAluno(Scanner scanner){
+    public static void removerAluno(Scanner scanner) {
         Aluno aluno = buscarIdAluno(scanner);
         listaAlunos.remove(aluno);
     }
-
 
 
 }

@@ -37,7 +37,7 @@ public class Diretor extends Funcionario{
 
     public static void addProfEmDados(Scanner scanner){
         Professor professor = DadosProfessores.buscarIdProfessor(scanner);
-        DadosProfessores.adicionarProfessor(professor);
+        DadosProfessores.adicionarProfessor(professor, scanner);
     }
 
     public static void removerProfEmDados(Scanner scanner){
@@ -47,7 +47,7 @@ public class Diretor extends Funcionario{
 
     public static void addAlunoEmDados(Scanner scanner){
         Aluno aluno = DadosAlunos.buscarIdAluno(scanner);
-        DadosAlunos.adicionarAluno(aluno);
+        DadosAlunos.adicionarAluno(aluno, scanner);
     }
 
     public static void removerAlunoEmDados(Scanner scanner){

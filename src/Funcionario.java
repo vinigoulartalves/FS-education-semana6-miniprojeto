@@ -21,9 +21,7 @@ public class Funcionario implements IFuncionario {
         this.nome = nome;
     }
 
-    public double getSalario() {
-        return salario;
-    }
+    public double getSalario() { return salario; }
 
     public void setSalario(double salario) {
         this.salario = salario;

@@ -10,15 +10,14 @@ public class Aluno {
     private String nome;
     private int idade;
 
+    public Aluno() {}
+
     public Aluno(String nome, int idade) {
         this.nome = nome;
         this.idade = idade;
 
         idGeral += 1;
         setIdAluno(idGeral);
-    }
-
-    public Aluno() {
     }
 
     public static StatusMatricula[] getTodosStatusMatriculas() {

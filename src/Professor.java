@@ -4,15 +4,15 @@ public class Professor extends Funcionario {
 
     private static int idGeral = 0;
     private int idProfessor;
-
-    private String nome;
     private int idade;
     private int tempoTrabalho;
 
-    public Professor(String nome, int idade, int tempoTrabalho) {
-        this.nome = nome;
-        this.idade = idade;
+    public Professor(){}
+
+    public Professor(String nome,  double salario, int tempoTrabalho, int idade) {
+        super (nome, salario);
         this.tempoTrabalho = tempoTrabalho;
+        this.idade = idade;
 
         idGeral += 1;
         setIdProfessor(idGeral);
@@ -39,11 +39,11 @@ public class Professor extends Funcionario {
     }
 
     public String getNome() {
-        return nome;
+        return super.getNome();
     }
 
     public void setNome(String nome) {
-        this.nome = nome;
+        super.setNome(nome);
     }
 
     public int getIdade() {
@@ -84,7 +84,7 @@ public class Professor extends Funcionario {
 
     @Override
     public String toString() {
-        return "Professor{" + "nome='" + nome + '\'' + ", idade=" + idade + ", tempoTrabalho=" + tempoTrabalho + '}';
+        return "Professor{" + "nome='" + super.getNome() + '\'' + ", idade=" + idade + ", tempoTrabalho=" + tempoTrabalho + '}';
     }
 }
 
