@@ -66,15 +66,16 @@ public class Diretor extends Funcionario{
     public static void promoverProfessor(Scanner scanner){
         Professor professor = DadosProfessores.buscarIdProfessor(scanner);
         professor.promover();
+        System.out.println("Professor " + professor.getNome() + " foi promovido a " + professor.getCargoFuncinario());
     }
 
 
 
-    public static void criarTurma(Scanner scanner){
+    public static void criarTurma(Scanner scanner, Diretor diretor){
         Curso curso = new Curso();
-        curso.adicionarCurso(scanner);
-
         Turma turma = new Turma();
+        curso.adicionarCurso(scanner, turma);
+
         turma.adicionarTurma(curso, scanner);
 
         DadosTurmas.adicionarTurma(turma);

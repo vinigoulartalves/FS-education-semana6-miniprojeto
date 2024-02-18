@@ -27,6 +27,10 @@ public class Funcionario implements IFuncionario {
         this.salario = salario;
     }
 
+    public CargoFuncinario getCargoFuncinario() {
+        return cargoFuncinario;
+    }
+
     @Override
     public String toString() {
         return "Funcionario{" + "nome='" + nome + '\'' + ", salario=" + salario + '}';

@@ -113,7 +113,7 @@ public class Main {
                 break;
             case 2:
                 Diretor diretorEscolhido = DadosDiretores.buscarIdDiretor(entrada);
-                subMenuDiretorProfessor(diretorEscolhido);
+                menuAcoesDiretor(diretorEscolhido);
 
                 break;
             case 0:
@@ -160,11 +160,13 @@ public class Main {
                 //TODO Menu de professor
                 break;
             case 0:
+
                 return;
             default:
                 System.out.println("Valor inválido! Escolha uma opção válida!");
                 break;
         }
+
     }
 
     public static void menuAluno() {
@@ -213,12 +215,17 @@ public class Main {
 
         Scanner entrada = new Scanner(System.in);
 
-        System.out.println("GERENCIAR PROFESSORES");
-        System.out.println("1 - ADICIONAR ");
-        System.out.println("2 - REMOVER ");
-        System.out.println("3 - PROMOVER ");
-        System.out.println("4 - LISTAR ");
-        System.out.println("0 - SAIR ");
+        System.out.println("+----------------------------+");
+        System.out.println("|    GERENCIAR PROFESSORES   |");
+        System.out.println("+----------------------------+");
+        System.out.println("| 1 - ADICIONAR              |");
+        System.out.println("| 2 - REMOVER                |");
+        System.out.println("| 3 - PROMOVER               |");
+        System.out.println("| 4 - LISTAR                 |");
+        System.out.println("+----------------------------+");
+        System.out.println("| 0 - VOLTAR                 |");
+        System.out.println("+----------------------------+");
+
         System.out.println();
         System.out.print("SELECIONE UMA OPÇÃO: ");
         int escolhaMenu = entrada.nextInt();
@@ -228,29 +235,121 @@ public class Main {
         switch (escolhaMenu) {
             case 1:
                 System.out.println("ADICONAR PROFESSOR");
-
                 DadosProfessores.adicionarProfessor(entrada);
-
-                //TODO Metodo promoção de professores
                 break;
             case 2:
                 System.out.println("REMOVER PROFESSOR");
-
                 DadosProfessores.removerProfessor(entrada);
-
-                //TODO Metodo adiconar professor
                 break;
             case 3:
                 System.out.println("PROMOVER PROFESSOR");
-
-                //TODO remover professor
+                Diretor.promoverProfessor(entrada);
                 break;
             case 4:
                 System.out.println("LISTAR PROFESSORES");
-
-                //TODO remover professor
+                DadosProfessores.listarProfessores();
                 break;
             case 0:
+                menuDiretor();
+                break;
+
+            default:
+                System.out.println("Valor inválido! Escolha uma opção válida!");
+                break;
+        }
+        subMenuDiretorProfessor(diretorEscolhido);
+    }
+
+    public static void subMenuDiretorAluno(Diretor diretorEscolhido) {
+
+        Scanner entrada = new Scanner(System.in);
+
+        System.out.println("GERENCIAR ALUNOS");
+        System.out.println("1 - ADICIONAR À TURMA ");
+        System.out.println("2 - REMOVER DA TURMA");
+        System.out.println("3 - LISTAR ALUNOS");
+        System.out.println("0 - VOLTAR ");
+        System.out.println();
+        System.out.print("SELECIONE UMA OPÇÃO: ");
+        int escolhaMenu = entrada.nextInt();
+        entrada.nextLine();
+        System.out.println();
+
+        switch (escolhaMenu) {
+            case 1:
+                System.out.println("ADICONAR ALUNO");
+
+                Aluno alunoEscolhido = DadosAlunos.buscarIdAluno(entrada);
+                Turma turmaEscolhida = DadosTurmas.buscarIdTurmas(entrada);
+                turmaEscolhida.getCurso().adicionarAluno(alunoEscolhido);
+
+                break;
+            case 2:
+                System.out.println("REMOVER ALUNO");
+
+                alunoEscolhido = DadosAlunos.buscarIdAluno(entrada);
+                turmaEscolhida = DadosTurmas.buscarIdTurmas(entrada);
+                turmaEscolhida.getCurso( ).removerAluno(alunoEscolhido);
+
+                //TODO REMOVER ALUNO NÃO ESTÁ REMOVENDO ALUNO DA LISTA DA TURMA ESCOLHIDA. RETORNA MENSAGEM DE QUE O ALUNO FOI REMOVIDO, MAS NÃO O RETIRA DA LISTA!!
+
+
+                break;
+            case 3:
+                System.out.println("LISTAR ALUNO");
+
+                DadosAlunos.listarAlunos();
+
+                break;
+            case 0:
+                menuAcoesDiretor(diretorEscolhido);
+                break;
+
+            default:
+                System.out.println("Valor inválido! Escolha uma opção válida!");
+                break;
+        }
+        subMenuDiretorAluno(diretorEscolhido);
+    }
+
+    public static void subMenuDiretorTurmas(Diretor diretorEscolhido) {
+
+        Scanner entrada = new Scanner(System.in);
+
+        System.out.println("GERENCIAR TURMAS");
+        System.out.println("1 - CRIAR ");
+        System.out.println("2 - REMOVER ");
+        System.out.println("3 - LISTAR ");
+        System.out.println("0 - VOLTAR ");
+        System.out.println();
+        System.out.print("SELECIONE UMA OPÇÃO: ");
+        int escolhaMenu = entrada.nextInt();
+        entrada.nextLine();
+        System.out.println();
+
+        switch (escolhaMenu) {
+            case 1:
+                System.out.println("CRIAR TURMA");
+
+                Diretor.criarTurma(entrada, diretorEscolhido);
+
+                break;
+            case 2:
+                System.out.println("REMOVER TURMA");
+
+                DadosTurmas.removerTurma(entrada);
+
+                //TODO AO REMOVER UMA TURMA DE ÍNDICE 1, A PRÓXIMA TURMA CRIADA, RECEBE VALOR 3 NO ÍNDICE E NÃO É POSSÍVEL REMOVER ESTA TURMA A PARTIR DO INDICE 3!!
+
+                break;
+            case 3:
+                System.out.println("LISTAR TURMA");
+
+                DadosTurmas.listarTurmas();
+
+                break;
+            case 0:
+
                 break;
 
             default:
@@ -267,7 +366,7 @@ public class Main {
         System.out.println(diretorEscolhido.getNome());
         System.out.println("1 - GERENCIAR PROFESSORES ");
         System.out.println("2 - GERENCIAR ALUNOS ");
-        System.out.println("3 - GERENCIAR CURSOS ");
+        System.out.println("3 - GERENCIAR TURMAS ");
         System.out.println("0 - SAIR ");
         System.out.println();
         System.out.print("SELECIONE UMA OPÇÃO: ");
@@ -278,19 +377,19 @@ public class Main {
         switch (escolhaMenu) {
             case 1:
                 System.out.println("Menu gerenciamento professores");
+                subMenuDiretorProfessor(diretorEscolhido);
 
-                Aluno novoAluno = new Aluno();
-                DadosAlunos.adicionarAluno(novoAluno, entrada);
 
                 //TODO Metodo gerenciamento professores
                 break;
             case 2:
                 System.out.println("Menu de aluno");
 
-                Aluno alunoEscolhido = DadosAlunos.buscarIdAluno(entrada);
-                System.out.println("Bem Vindo " + alunoEscolhido.getNome() + "!");
-
+                subMenuDiretorAluno(diretorEscolhido);
                 //TODO Menu de aluno
+                break;
+            case 3:
+                subMenuDiretorTurmas(diretorEscolhido);
                 break;
             case 0:
                 return;
@@ -347,7 +446,6 @@ public class Main {
                 System.out.println("Valor inválido! Escolha uma opção válida!");
                 break;
         }
-
     }
 
 }

@@ -58,14 +58,14 @@ public class Curso {
         } else {
             alunos.add(aluno);
             turma.adicionarAluno(aluno);
-            System.out.println("O aluno foi adicionado ao curso.");
+            System.out.println("O aluno "+ aluno + " foi adicionado ao curso.");
             }
     }
 
     //Remover um aluno do curso
     public void removerAluno(Aluno aluno){
         if (alunos.contains(aluno)) {
-            System.out.println("O aluno foi removido do curso.");
+            System.out.println("O aluno "+ aluno + " foi removido do curso.");
         } else {
             alunos.remove(aluno);
             turma.listaAlunos.remove(aluno);
@@ -78,8 +78,8 @@ public class Curso {
         Professor professorEscolhido = null;
 
         while (!finalizar) {
-            System.out.println("1 - adicionar um novo professor");
-            System.out.println("2 - adicionar professor existente");
+            System.out.println("1 - ADICIONAR UM NOVO PROFESSOR");
+            System.out.println("2 - ADICIONAR PROFESSOR EXISTENTE");
 
             int opcaoEscolhida = scanner.nextInt();
             switch (opcaoEscolhida) {
@@ -99,7 +99,7 @@ public class Curso {
         return professorEscolhido;
     }
 
-    public void adicionarCurso(Scanner entrada){
+    public void adicionarCurso(Scanner entrada, Turma turma){
         entrada = new Scanner(System.in);
         String nomeCurso;
         Professor professor;
@@ -110,6 +110,7 @@ public class Curso {
 
         setNomeCurso(nomeCurso);
         setProfessor(professor);
+        setTurma(turma);
     }
 
     @Override

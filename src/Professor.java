@@ -8,10 +8,11 @@ public class Professor extends Funcionario {
     private int idade;
     private int tempoTrabalho;
 
-    public Professor(){}
+    public Professor() {
+    }
 
-    public Professor(String nome,  double salario, int tempoTrabalho, int idade) {
-        super (nome, salario);
+    public Professor(String nome, double salario, int tempoTrabalho, int idade) {
+        super(nome, salario);
         this.tempoTrabalho = tempoTrabalho;
         this.idade = idade;
 
@@ -29,6 +30,11 @@ public class Professor extends Funcionario {
         } catch (IllegalArgumentException e) {
             return null;
         }
+    }
+
+    public static CargoFuncinario getStatusProfessor(Professor professor) {
+
+        return professor.getCargoFuncinario();
     }
 
     public int getIdProfessor() {
