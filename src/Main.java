@@ -15,10 +15,14 @@ public class Main {
 
         Scanner entrada = new Scanner(System.in);
 
-        System.out.println("|MENU INICIAL|");
-        System.out.println("1 - FUNCIONÁRIO: ");
-        System.out.println("2 - ALUNO: ");
-        System.out.println("0 - SAIR");
+        System.out.println("+----------------------------+");
+        System.out.println("|         MENU LOGIN         |");
+        System.out.println("+----------------------------+");
+        System.out.println("| 1. FUNCIONÁRIO             |");
+        System.out.println("| 2. ALUNO                   |");
+        System.out.println("+----------------------------+");
+        System.out.println("| 0. Sair                    |");
+        System.out.println("+----------------------------+");
         System.out.print("SELECIONE UMA OPÇÃO: ");
 
         int escolhaMenu = entrada.nextInt();
@@ -50,10 +54,14 @@ public class Main {
 
         Scanner entrada = new Scanner(System.in);
 
-        System.out.println("|FUNCIONÁRIO|");
-        System.out.println("1 - DIRETOR: ");
-        System.out.println("2 - PROFESSOR: ");
-        System.out.println("0 - VOLTAR");
+        System.out.println("+----------------------------+");
+        System.out.println("|      MENU FUNCIONÁRIO      |");
+        System.out.println("+----------------------------+");
+        System.out.println("| 1. DIRETOR                 |");
+        System.out.println("| 2. PROFESSOR               |");
+        System.out.println("+----------------------------+");
+        System.out.println("| 0. VOLTAR                  |");
+        System.out.println("+----------------------------+");
         System.out.print("SELECIONE UMA OPÇÃO: ");
 
         int escolhaMenu = entrada.nextInt();
@@ -81,10 +89,14 @@ public class Main {
     public static void menuDiretor() {
         Scanner entrada = new Scanner(System.in);
 
-        System.out.println("|DIRETOR|");
-        System.out.println("1 - CADASTRAR DIRETOR: ");
-        System.out.println("2 - DIRETOR EXISTENTE: ");
-        System.out.println("0 - VOLTAR");
+        System.out.println("+----------------------------+");
+        System.out.println("|        MENU DIRETOR        |");
+        System.out.println("+----------------------------+");
+        System.out.println("| 1 - CADASTRAR DIRETOR:     |");
+        System.out.println("| 2 - DIRETOR EXISTENTE:     |");
+        System.out.println("+----------------------------+");
+        System.out.println("| 0 - VOLTAR                 |");
+        System.out.println("+----------------------------+");
         System.out.print("SELECIONE UMA OPÇÃO: ");
 
         int escolhaMenu = entrada.nextInt();
@@ -115,10 +127,14 @@ public class Main {
     public static void menuProfessor() {
         Scanner entrada = new Scanner(System.in);
 
-        System.out.println("|PROFESSOR|");
-        System.out.println("1 - CADASTRAR PROFESSOR: ");
-        System.out.println("2 - PROFESSOR EXISTENTE: ");
-        System.out.println("0 - VOLTAR");
+        System.out.println("+----------------------------+");
+        System.out.println("|        MENU PROFESSOR      |");
+        System.out.println("+----------------------------+");
+        System.out.println("| 1 - CADASTRAR PROFESSOR:   |");
+        System.out.println("| 2 - PROFESSOR EXISTENTE:   |");
+        System.out.println("+----------------------------+");
+        System.out.println("| 0 - VOLTAR                 |");
+        System.out.println("+----------------------------+");
         System.out.print("SELECIONE UMA OPÇÃO: ");
 
         int escolhaMenu = entrada.nextInt();
@@ -154,10 +170,14 @@ public class Main {
     public static void menuAluno() {
         Scanner entrada = new Scanner(System.in);
 
-        System.out.println("|ALUNO|");
-        System.out.println("1 - CADASTRAR ALUNO: ");
-        System.out.println("2 - ALUNO EXISTENTE: ");
-        System.out.println("0 - VOLTAR");
+        System.out.println("+----------------------------+");
+        System.out.println("|          MENU ALUNO        |");
+        System.out.println("+----------------------------+");
+        System.out.println("| 1 - CADASTRAR ALUNO:       |");
+        System.out.println("| 2 - ALUNO EXISTENTE:       |");
+        System.out.println("+----------------------------+");
+        System.out.println("| 0 - VOLTAR                 |");
+        System.out.println("+----------------------------+");
         System.out.print("SELECIONE UMA OPÇÃO: ");
 
         int escolhaMenu = entrada.nextInt();
@@ -189,7 +209,7 @@ public class Main {
         }
     }
 
-    public static void menuAcoesAluno (Aluno alunoEscolhido) {
+    public static void menuAcoesAluno(Aluno alunoEscolhido) {
 
         // listar curso, adicionar curso, remover curso, também pode trancar ou ativar sua conta
 
