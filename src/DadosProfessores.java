@@ -3,9 +3,9 @@ import java.util.List;
 import java.util.Scanner;
 
 public class DadosProfessores {
-    public static List<Professor> listaProfessores= new ArrayList<>();
+    public static List<Professor> listaProfessores = new ArrayList<>();
 
-    public static void adicionarProfessor(Professor professor, Scanner entrada){
+    public static void adicionarProfessor(Professor professor, Scanner entrada) {
 
         entrada = new Scanner(System.in);
 
@@ -56,7 +56,7 @@ public class DadosProfessores {
     }
 
 
-    public static Professor buscarIdProfessor(Scanner scanner){
+    public static Professor buscarIdProfessor(Scanner scanner) {
         System.out.println("Professores Cadastrados: ");
         listarProfessores();
         System.out.println("Digite o id do professor que você quer selecionar");
@@ -64,13 +64,13 @@ public class DadosProfessores {
         int idProfessorEscolhido = scanner.nextInt();
         scanner.nextLine();
         Professor professorEscolhido = null;
-        while (idProfessorEscolhido <= 0 || idProfessorEscolhido >= listaProfessores.size() + 1) {
-            System.out.println("ID inválido. Digite um ID válido:");
-            idProfessorEscolhido = scanner.nextInt();
-            scanner.nextLine();
-        }
-        for(Professor professor : listaProfessores){
-            if(professor.getIdProfessor() == idProfessorEscolhido){
+//        while (idProfessorEscolhido <= 0 || idProfessorEscolhido >= listaProfessores.size() + 1) {
+//            System.out.println("ID inválido. Digite um ID válido:");
+//            idProfessorEscolhido = scanner.nextInt();
+//            scanner.nextLine();
+//        }
+        for (Professor professor : listaProfessores) {
+            if (professor.getIdProfessor() == idProfessorEscolhido) {
                 professorEscolhido = professor;
             }
         }
@@ -78,13 +78,13 @@ public class DadosProfessores {
         return professorEscolhido;
     }
 
-    public static void listarProfessores(){
-        for(Professor professor : listaProfessores){
+    public static void listarProfessores() {
+        for (Professor professor : listaProfessores) {
             System.out.println("[" + professor.getIdProfessor() + "] - " + professor.getNome());
         }
     }
 
-    public static void removerProfessor(Scanner scanner){
+    public static void removerProfessor(Scanner scanner) {
         Professor professor = buscarIdProfessor(scanner);
         listaProfessores.remove(professor);
         System.out.println("Professor " + professor.getNome() + " removido!");

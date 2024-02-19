@@ -31,11 +31,11 @@ public class DadosAlunos {
         int idAlunoEscolhido = scanner.nextInt();
         scanner.nextLine();
         Aluno alunoEscolhido = null;
-        while (idAlunoEscolhido <= 0 || idAlunoEscolhido >= listaAlunos.size() + 1) {
-            System.out.println("ID inválido. Digite um ID válido:");
-            idAlunoEscolhido = scanner.nextInt();
-            scanner.nextLine();
-        }
+//        while (idAlunoEscolhido <= 0 || idAlunoEscolhido >= listaAlunos.size() + 1) {
+//            System.out.println("ID inválido. Digite um ID válido:");
+//            idAlunoEscolhido = scanner.nextInt();
+//            scanner.nextLine();
+//        }
         for (Aluno aluno : listaAlunos) {
             if (aluno.getIdAluno() == idAlunoEscolhido) {
                 alunoEscolhido = aluno;
