@@ -4,6 +4,26 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
+        Diretor diretor = new Diretor("Leo", 1000, 2);
+        DadosDiretores dadosDiretores = new DadosDiretores();
+        DadosDiretores.listaDiretores.add(diretor);
+
+        Professor professor = new Professor("Vini", 1000, 3, 28);
+        DadosProfessores dadosDiretor = new DadosProfessores();
+        DadosProfessores.listaProfessores.add(professor);
+
+        Curso abc1 = new Curso("abc1", professor);
+        Curso abc2 = new Curso("abc2", professor);
+        Curso abc3 = new Curso("abc3", professor);
+
+        Turma turmaAbc1 = new Turma(abc1, 2024);
+        DadosTurmas.listaTurmas.add(turmaAbc1);
+        Turma turmaAbc2 = new Turma(abc2, 2024);
+        DadosTurmas.listaTurmas.add(turmaAbc2);
+        Turma turmaAbc3 = new Turma(abc3, 2024);
+        DadosTurmas.listaTurmas.add(turmaAbc3);
+
+        DadosTurmas dadosTurmas = new DadosTurmas();
 
         System.out.println("BEM VINDO!");
         menuLogin();
@@ -289,7 +309,7 @@ public class Main {
 
                 alunoEscolhido = DadosAlunos.buscarIdAluno(entrada);
                 turmaEscolhida = DadosTurmas.buscarIdTurmas(entrada);
-                turmaEscolhida.getCurso( ).removerAluno(alunoEscolhido);
+                turmaEscolhida.getCurso().removerAluno(alunoEscolhido);
 
                 //TODO REMOVER ALUNO NÃO ESTÁ REMOVENDO ALUNO DA LISTA DA TURMA ESCOLHIDA. RETORNA MENSAGEM DE QUE O ALUNO FOI REMOVIDO, MAS NÃO O RETIRA DA LISTA!!
 

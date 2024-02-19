@@ -31,13 +31,32 @@ public class DadosTurmas {
         int idTurmaEscolhida = scanner.nextInt();
         scanner.nextLine();
         Turma turmaEscolhida = null;
-        while (idTurmaEscolhida <= 0 || idTurmaEscolhida >= listaTurmas.size() + 1) {
-            System.out.println("ID inválido. Digite um ID válido:");
-            idTurmaEscolhida = scanner.nextInt();
-            scanner.nextLine();
-        }
+
+//        while (true) {
+//            for (int i = 0; i < listaTurmas.size(); i++) {
+//                int idTurmaEscolhida = scanner.nextInt();
+//                scanner.nextLine();
+//                if (turmaEscolhida.getIdTurma() == idTurmaEscolhida) {
+//                    return turmaEscolhida;
+//                } else {
+//                    System.out.println("ID inválido. Digite um ID válido:");
+//                    idTurmaEscolhida = scanner.nextInt();
+//                    scanner.nextLine();
+//                }
+//
+//            }
+//            System.out.println("ID inválido. Digite um ID válido:");
+//
+//        }
+
+//        while (idTurmaEscolhida <= 0 || idTurmaEscolhida >= listaTurmas.size() + 1) {
+//            System.out.println("ID inválido. Digite um ID válido:");
+//            idTurmaEscolhida = scanner.nextInt();
+//            scanner.nextLine();
+//        }
+
         for (Turma turma : listaTurmas) {
-            if (turma.getIdTurma() == idTurmaEscolhida) {
+            if (turma != null && turma.getIdTurma() == idTurmaEscolhida) {
                 turmaEscolhida = turma;
             }
         }
