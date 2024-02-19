@@ -21,7 +21,9 @@ public class Funcionario implements IFuncionario {
         this.nome = nome;
     }
 
-    public double getSalario() { return salario; }
+    public double getSalario() {
+        return salario;
+    }
 
     public void setSalario(double salario) {
         this.salario = salario;
@@ -38,10 +40,11 @@ public class Funcionario implements IFuncionario {
 
     @Override
     public void promover() {
-        if(cargoFuncinario.equals(CargoFuncinario.INICIANTE)){
+        if (cargoFuncinario.equals(CargoFuncinario.INICIANTE)) {
             cargoFuncinario = CargoFuncinario.EXPERIENTE;
-        } else if(cargoFuncinario.equals(CargoFuncinario.EXPERIENTE)){
+        } else if (cargoFuncinario.equals(CargoFuncinario.EXPERIENTE)) {
             cargoFuncinario = CargoFuncinario.AVANCADO;
         }
     }
+
 }

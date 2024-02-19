@@ -58,14 +58,14 @@ public class Curso {
         } else {
             alunos.add(aluno);
             turma.adicionarAluno(aluno);
-            System.out.println("O aluno "+ aluno + " foi adicionado ao curso.");
-            }
+            System.out.println("O aluno " + aluno + " foi adicionado ao curso.");
+        }
     }
 
     //Remover um aluno do curso
-    public void removerAluno(Aluno aluno){
+    public void removerAluno(Aluno aluno) {
         if (alunos.contains(aluno)) {
-            System.out.println("O aluno "+ aluno + " foi removido do curso.");
+            System.out.println("O aluno " + aluno + " foi removido do curso.");
         } else {
             alunos.remove(aluno);
             turma.listaAlunos.remove(aluno);
@@ -73,7 +73,7 @@ public class Curso {
         }
     }
 
-    public Professor menuCriacaoTurma(Scanner scanner){
+    public Professor menuCriacaoTurma(Scanner scanner) {
         boolean finalizar = false;
         Professor professorEscolhido = null;
 
@@ -82,6 +82,7 @@ public class Curso {
             System.out.println("2 - ADICIONAR PROFESSOR EXISTENTE");
 
             int opcaoEscolhida = scanner.nextInt();
+            scanner.nextLine();
             switch (opcaoEscolhida) {
                 case 1:
                     professorEscolhido = DadosProfessores.adicionarProfessor(scanner);
@@ -99,7 +100,7 @@ public class Curso {
         return professorEscolhido;
     }
 
-    public void adicionarCurso(Scanner entrada, Turma turma){
+    public void adicionarCurso(Scanner entrada, Turma turma) {
         entrada = new Scanner(System.in);
         String nomeCurso;
         Professor professor;

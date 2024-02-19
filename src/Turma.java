@@ -3,12 +3,24 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Turma {
+    private static int idGeral = 0;
     public List<Aluno> listaAlunos = new ArrayList<>();
     private int anoCriacao;
     private Curso curso;
-
-    private static int idGeral = 0;
     private int idTurma;
+
+    public Turma() {
+        idGeral += 1;
+        setIdTurma(idGeral);
+    }
+
+    public Turma(Curso curso, int anoCriacao) {
+        this.curso = curso;
+        this.anoCriacao = anoCriacao;
+
+        idGeral += 1;
+        setIdTurma(idGeral);
+    }
 
     public int getAnoCriacao() {
         return anoCriacao;
@@ -34,19 +46,6 @@ public class Turma {
         this.idTurma = idTurma;
     }
 
-    public Turma() {
-        idGeral += 1;
-        setIdTurma(idGeral);
-    }
-    public Turma(Curso curso, int anoCriacao) {
-        this.curso = curso;
-        this.anoCriacao = anoCriacao;
-
-        idGeral += 1;
-        setIdTurma(idGeral);
-    }
-
-
     public void listarAlunos() {
         for (Aluno aluno : listaAlunos) {
             System.out.println("Nome: " + aluno);
@@ -63,6 +62,7 @@ public class Turma {
         listarAlunos();
 
         int idAluno = scanner.nextInt();
+        scanner.nextLine();
         Aluno alunoEscolhido = null;
 
         for (Aluno aluno : listaAlunos) {
@@ -83,6 +83,7 @@ public class Turma {
 
         System.out.println("Insira o ano de criação da turma: ");
         anoCriacao = entrada.nextInt();
+        entrada.nextLine();
         setAnoCriacao(anoCriacao);
         setCurso(curso);
     }
@@ -91,9 +92,9 @@ public class Turma {
     @Override
     public String toString() {
         return "Turma{" +
-                       "listaAlunos=" + listaAlunos +
-                       ", anoCriacao=" + anoCriacao +
-                       ", curso=" + curso +
-                       '}';
+                "listaAlunos=" + listaAlunos +
+                ", anoCriacao=" + anoCriacao +
+                ", curso=" + curso +
+                '}';
     }
 }
