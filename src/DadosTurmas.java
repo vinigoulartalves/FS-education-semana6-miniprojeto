@@ -19,6 +19,7 @@ public class DadosTurmas {
             System.out.println("\nAlunos: ");
             for (Aluno aluno : turma.getCurso().getAlunos()) {
                 System.out.println(" [" + aluno.getIdAluno() + "] - " + aluno.getNome());
+                System.out.println();
             }
         }
     }
@@ -32,29 +33,6 @@ public class DadosTurmas {
         scanner.nextLine();
         Turma turmaEscolhida = null;
 
-//        while (true) {
-//            for (int i = 0; i < listaTurmas.size(); i++) {
-//                int idTurmaEscolhida = scanner.nextInt();
-//                scanner.nextLine();
-//                if (turmaEscolhida.getIdTurma() == idTurmaEscolhida) {
-//                    return turmaEscolhida;
-//                } else {
-//                    System.out.println("ID inválido. Digite um ID válido:");
-//                    idTurmaEscolhida = scanner.nextInt();
-//                    scanner.nextLine();
-//                }
-//
-//            }
-//            System.out.println("ID inválido. Digite um ID válido:");
-//
-//        }
-
-//        while (idTurmaEscolhida <= 0 || idTurmaEscolhida >= listaTurmas.size() + 1) {
-//            System.out.println("ID inválido. Digite um ID válido:");
-//            idTurmaEscolhida = scanner.nextInt();
-//            scanner.nextLine();
-//        }
-
         for (Turma turma : listaTurmas) {
             if (turma != null && turma.getIdTurma() == idTurmaEscolhida) {
                 turmaEscolhida = turma;
@@ -63,6 +41,28 @@ public class DadosTurmas {
 
         return turmaEscolhida;
     }
+
+//    public static Turma buscarIdTurmaTeste (Scanner entrada) {
+//        System.out.println("TURMAS CADASTRADAS: ");
+//        listarTurmas();
+//        System.out.println("Insira o ID da turma desejada: ");
+//
+//        int idEscolhido = entrada.nextInt();
+//        entrada.nextLine();
+//
+//        Turma turmaEscolhida = new Turma();
+//
+//        for (int i = 0; i < listaTurmas.size(); i++) {
+//            if (listaTurmas.indexOf(i) == i){
+//
+//            }
+//
+//
+//        }
+//
+//
+//
+//    }
 
     public static void removerTurma(Scanner scanner) {
         Turma turma = buscarIdTurmas(scanner);

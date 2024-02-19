@@ -52,7 +52,7 @@ public class Curso {
     }
 
     //Adiciona um aluno ao curso
-    public void adicionarAluno(Aluno aluno) {
+    public void adicionarAluno(Aluno aluno, Turma turma) {
         if (alunos.contains(aluno)) {
             System.out.println("O aluno já está adicionado ao curso.");
         } else {
@@ -120,5 +120,8 @@ public class Curso {
                 ", professor=" + professor +
                 ", alunos=" + alunos +
                 '}';
+    }
+
+    public void adicionarAluno(Aluno aluno) {
     }
 }

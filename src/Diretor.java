@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Diretor extends Funcionario {
+public class Diretor extends Funcionario{
 
     private static int idGeral = 0;
     private int idDiretor;
@@ -57,6 +57,8 @@ public class Diretor extends Funcionario {
 
         Curso curso = new Curso();
         Turma turma = new Turma();
+
+        curso.adicionarCurso(scanner, turma);
 
         curso = curso.adicionarCurso(scanner, turma);
         turma = turma.adicionarTurma(curso, scanner);

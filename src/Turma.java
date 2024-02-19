@@ -76,6 +76,7 @@ public class Turma {
 
     public Turma adicionarTurma(Curso curso, Scanner entrada) {
         entrada = new Scanner(System.in);
+        Turma turma = new Turma();
 
         int anoCriacao;
 

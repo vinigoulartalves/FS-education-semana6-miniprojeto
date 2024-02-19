@@ -301,7 +301,7 @@ public class Main {
 
                 Aluno alunoEscolhido = DadosAlunos.buscarIdAluno(entrada);
                 Turma turmaEscolhida = DadosTurmas.buscarIdTurmas(entrada);
-                turmaEscolhida.getCurso().adicionarAluno(alunoEscolhido);
+                turmaEscolhida.getCurso().adicionarAluno(alunoEscolhido, turmaEscolhida);
 
                 break;
             case 2:
@@ -413,6 +413,46 @@ public class Main {
                 break;
             case 0:
                 return;
+            default:
+                System.out.println("Valor inválido! Escolha uma opção válida!");
+                break;
+        }
+    }
+
+    public static void menuAcoesProfessor(Aluno professorEscolhido) {
+
+        // listar alunos, adicionar aluno, remover aluno da sua turma
+
+        Scanner entrada = new Scanner(System.in);
+
+        System.out.println(professorEscolhido.getNome());
+        System.out.println("1 - ADICIONAR ALUNO À TURMA: ");
+        System.out.println("2 - REMOVER ALUNO DA TURMA: ");
+        System.out.println("3 - LISTAR ALUNOS: ");
+        System.out.println("--------------------------------");
+        System.out.println("0 - SAIR: ");
+        System.out.println();
+        System.out.print("SELECIONE UMA OPÇÃO: ");
+        int escolha = entrada.nextInt();
+        entrada.nextLine();
+        System.out.println();
+
+        switch (escolha) {
+            case 1:
+
+                //TODO adiconar aluno a turma
+                break;
+            case 2:
+
+                //TODO remover aluno
+                break;
+            case 3:
+
+                //TODO listar alunos
+                break;
+            case 0:
+
+                break;
             default:
                 System.out.println("Valor inválido! Escolha uma opção válida!");
                 break;
