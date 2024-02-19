@@ -100,18 +100,17 @@ public class Curso {
         return professorEscolhido;
     }
 
-    public void adicionarCurso(Scanner entrada, Turma turma) {
+    public Curso adicionarCurso(Scanner entrada, Turma turma) {
         entrada = new Scanner(System.in);
-        String nomeCurso;
-        Professor professor;
+
 
         System.out.println("Insira o nome: ");
-        nomeCurso = entrada.nextLine();
-        professor = this.menuCriacaoTurma(entrada);
+        this.nomeCurso = entrada.nextLine();
+        this.professor = this.menuCriacaoTurma(entrada);
 
-        setNomeCurso(nomeCurso);
-        setProfessor(professor);
-        setTurma(turma);
+        turma.setCurso(this);
+        this.turma = turma;
+        return this;
     }
 
     @Override

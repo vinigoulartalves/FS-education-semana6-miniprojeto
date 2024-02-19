@@ -5,11 +5,11 @@ import java.util.Scanner;
 public class DadosTurmas {
     public static List<Turma> listaTurmas = new ArrayList<>();
 
-    public static void adicionarTurma(Turma turma){
+    public static void adicionarTurma(Turma turma) {
         listaTurmas.add(turma);
     }
 
-    public static void listarTurmas(){
+    public static void listarTurmas() {
         for (Turma turma : listaTurmas) {
             System.out.println("ID Turma: [" + turma.getIdTurma() + "]");
             System.out.println("Curso: " + turma.getCurso());
@@ -20,12 +20,10 @@ public class DadosTurmas {
             for (Aluno aluno : turma.getCurso().getAlunos()) {
                 System.out.println(" [" + aluno.getIdAluno() + "] - " + aluno.getNome());
             }
-
-            System.out.println("\n");
         }
     }
 
-    public static Turma buscarIdTurmas(Scanner scanner){
+    public static Turma buscarIdTurmas(Scanner scanner) {
         System.out.println("Turmas Cadastradas: ");
         listarTurmas();
         System.out.println("Digite o id da turma que você quer selecionar");
@@ -38,8 +36,8 @@ public class DadosTurmas {
             idTurmaEscolhida = scanner.nextInt();
             scanner.nextLine();
         }
-        for(Turma turma : listaTurmas){
-            if(turma.getIdTurma() == idTurmaEscolhida){
+        for (Turma turma : listaTurmas) {
+            if (turma.getIdTurma() == idTurmaEscolhida) {
                 turmaEscolhida = turma;
             }
         }
@@ -47,7 +45,7 @@ public class DadosTurmas {
         return turmaEscolhida;
     }
 
-    public static void removerTurma(Scanner scanner){
+    public static void removerTurma(Scanner scanner) {
         Turma turma = buscarIdTurmas(scanner);
         listaTurmas.remove(turma);
         System.out.println("Turma " + turma.getIdTurma() + " removida!");

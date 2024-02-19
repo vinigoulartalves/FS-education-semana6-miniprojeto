@@ -5,14 +5,14 @@ import java.util.Scanner;
 public class Turma {
     private static int idGeral = 0;
     public List<Aluno> listaAlunos = new ArrayList<>();
+    private int idTurma;
     private int anoCriacao;
     private Curso curso;
-    private int idTurma;
+
 
     public Turma() {
-        idGeral += 1;
-        setIdTurma(idGeral);
     }
+
 
     public Turma(Curso curso, int anoCriacao) {
         this.curso = curso;
@@ -74,10 +74,8 @@ public class Turma {
         listaAlunos.remove(alunoEscolhido);
     }
 
-    public void adicionarTurma(Curso curso, Scanner entrada) {
+    public Turma adicionarTurma(Curso curso, Scanner entrada) {
         entrada = new Scanner(System.in);
-
-        Turma turma = new Turma();
 
         int anoCriacao;
 
@@ -86,6 +84,9 @@ public class Turma {
         entrada.nextLine();
         setAnoCriacao(anoCriacao);
         setCurso(curso);
+
+        return new Turma(curso, anoCriacao);
+
     }
 
 

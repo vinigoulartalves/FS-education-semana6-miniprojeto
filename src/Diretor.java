@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Diretor extends Funcionario{
+public class Diretor extends Funcionario {
 
     private static int idGeral = 0;
     private int idDiretor;
@@ -19,6 +19,52 @@ public class Diretor extends Funcionario{
         setIdDiretor(idGeral);
     }
 
+    public static void addProfEmDados(Scanner scanner) {
+        Professor professor = DadosProfessores.buscarIdProfessor(scanner);
+        DadosProfessores.adicionarProfessor(professor, scanner);
+    }
+
+    public static void removerProfEmDados(Scanner scanner) {
+        Professor professor = DadosProfessores.buscarIdProfessor(scanner);
+        DadosProfessores.removerProfessor(scanner);
+    }
+
+    public static void addAlunoEmDados(Scanner scanner) {
+        Aluno aluno = DadosAlunos.buscarIdAluno(scanner);
+        DadosAlunos.adicionarAluno(aluno, scanner);
+    }
+
+    public static void removerAlunoEmDados(Scanner scanner) {
+        Aluno aluno = DadosAlunos.buscarIdAluno(scanner);
+        DadosAlunos.removerAluno(scanner);
+    }
+
+    public static void listarProfessores() {
+        DadosProfessores.listarProfessores();
+    }
+
+    public static void listarAlunos() {
+        DadosAlunos.listarAlunos();
+    }
+
+    public static void promoverProfessor(Scanner scanner) {
+        Professor professor = DadosProfessores.buscarIdProfessor(scanner);
+        professor.promover();
+        System.out.println("Professor " + professor.getNome() + " foi promovido a " + professor.getCargoFuncinario());
+    }
+
+    public static void criarTurma(Scanner scanner, Diretor diretor) {
+
+        Curso curso = new Curso();
+        Turma turma = new Turma();
+
+        curso = curso.adicionarCurso(scanner, turma);
+        turma = turma.adicionarTurma(curso, scanner);
+
+
+        DadosTurmas.adicionarTurma(turma);
+    }
+
     public int getIdDiretor() {
         return idDiretor;
     }
@@ -34,55 +80,6 @@ public class Diretor extends Funcionario{
     public void setTempoTrabalho(int tempoTrabalho) {
         this.tempoTrabalho = tempoTrabalho;
     }
-
-    public static void addProfEmDados(Scanner scanner){
-        Professor professor = DadosProfessores.buscarIdProfessor(scanner);
-        DadosProfessores.adicionarProfessor(professor, scanner);
-    }
-
-    public static void removerProfEmDados(Scanner scanner){
-        Professor professor = DadosProfessores.buscarIdProfessor(scanner);
-        DadosProfessores.removerProfessor(scanner);
-    }
-
-    public static void addAlunoEmDados(Scanner scanner){
-        Aluno aluno = DadosAlunos.buscarIdAluno(scanner);
-        DadosAlunos.adicionarAluno(aluno, scanner);
-    }
-
-    public static void removerAlunoEmDados(Scanner scanner){
-        Aluno aluno = DadosAlunos.buscarIdAluno(scanner);
-        DadosAlunos.removerAluno(scanner);
-    }
-
-    public static void listarProfessores(){
-        DadosProfessores.listarProfessores();
-    }
-
-    public static void listarAlunos(){
-        DadosAlunos.listarAlunos();
-    }
-
-    public static void promoverProfessor(Scanner scanner){
-        Professor professor = DadosProfessores.buscarIdProfessor(scanner);
-        professor.promover();
-        System.out.println("Professor " + professor.getNome() + " foi promovido a " + professor.getCargoFuncinario());
-    }
-
-
-
-    public static void criarTurma(Scanner scanner, Diretor diretor){
-        Curso curso = new Curso();
-        Turma turma = new Turma();
-        curso.adicionarCurso(scanner, turma);
-
-        turma.adicionarTurma(curso, scanner);
-
-        DadosTurmas.adicionarTurma(turma);
-    }
-
-
-
 
     @Override
     public String toString() {
