@@ -309,7 +309,7 @@ public class Main {
 
                 alunoEscolhido = DadosAlunos.buscarIdAluno(entrada);
                 turmaEscolhida = DadosTurmas.buscarIdTurmas(entrada);
-                turmaEscolhida.getCurso().removerAluno(alunoEscolhido);
+                turmaEscolhida.getCurso().removerAluno(alunoEscolhido, turmaEscolhida);
 
                 //TODO REMOVER ALUNO NÃO ESTÁ REMOVENDO ALUNO DA LISTA DA TURMA ESCOLHIDA. RETORNA MENSAGEM DE QUE O ALUNO FOI REMOVIDO, MAS NÃO O RETIRA DA LISTA!!
 

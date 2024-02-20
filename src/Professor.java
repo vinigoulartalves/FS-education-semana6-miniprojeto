@@ -80,12 +80,12 @@ public class Professor extends Funcionario {
     }
 
     // Adicionar um aluno à turma
-    public void adicionarAluno(Curso curso, Aluno aluno) {
+    public void adicionarAluno (Curso curso, Aluno aluno) {
         curso.adicionarAluno(aluno);
     }
 
     //Remover um aluno da turma do professor
-    public void removerAluno(Curso curso, Aluno aluno) {
+    public void removerAluno (Curso curso, Aluno aluno) {
         curso.removerAluno(aluno);
     }
 

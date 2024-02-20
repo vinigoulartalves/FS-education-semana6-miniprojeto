@@ -63,12 +63,12 @@ public class Curso {
     }
 
     //Remover um aluno do curso
-    public void removerAluno(Aluno aluno) {
+    public void removerAluno(Aluno aluno, Turma turma) {
         if (alunos.contains(aluno)) {
-            System.out.println("O aluno " + aluno + " foi removido do curso.");
-        } else {
             alunos.remove(aluno);
             turma.listaAlunos.remove(aluno);
+            System.out.println("O aluno " + aluno + " foi removido do curso.");
+        } else {
             System.out.println("O aluno já não faz parte da turma.");
         }
     }
@@ -123,5 +123,8 @@ public class Curso {
     }
 
     public void adicionarAluno(Aluno aluno) {
+    }
+
+    public void removerAluno(Aluno aluno) {
     }
 }
