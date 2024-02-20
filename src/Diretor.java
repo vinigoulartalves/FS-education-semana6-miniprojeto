@@ -69,6 +69,20 @@ public class Diretor extends Funcionario{
     }
 
 
+
+    public static void criarTurma(Scanner scanner){
+        Curso curso = new Curso();
+        curso.adicionarCurso(scanner);
+
+        Turma turma = new Turma();
+        turma.adicionarTurma(curso, scanner);
+
+        DadosTurmas.adicionarTurma(turma);
+    }
+
+
+
+
     @Override
     public String toString() {
         return "Diretor{" +

@@ -9,6 +9,32 @@ public class DadosProfessores {
         listaProfessores.add(professor);
     }
 
+    public static Professor adicionarProfessor(Scanner entrada) {
+        entrada = new Scanner(System.in);
+
+        String nome;
+        double salario;
+        int tempoTrabalho;
+        int idade;
+        System.out.println("Insira o nome: ");
+        nome = entrada.nextLine();
+        System.out.println("Insira o salário: ");
+        salario = entrada.nextDouble();
+        entrada.nextLine();
+        System.out.println("Insira o tempo de trabalho (Anos): ");
+        tempoTrabalho = entrada.nextInt();
+        entrada.nextLine();
+        System.out.println("Insira a idade: ");
+        idade = entrada.nextInt();
+        entrada.nextLine();
+
+        Professor novoProfessor = new Professor(nome, salario, tempoTrabalho, idade);
+        listaProfessores.add(novoProfessor);
+        System.out.println("Professor " + novoProfessor.getNome() + " adicionado.");
+        return novoProfessor;
+    }
+
+
     public static Professor buscarIdProfessor(Scanner scanner){
         System.out.println("Digite o id do professor que você quer selecionar");
         listarProfessores();

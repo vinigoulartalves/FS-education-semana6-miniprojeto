@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.Scanner;
 
 public class Professor extends Funcionario {
 
@@ -63,12 +64,12 @@ public class Professor extends Funcionario {
     }
 
     // Listar os alunos
-    public void listarAlunos(List<Curso> cursos) {
+    public void listarAlunos() {
         System.out.println("Alunos na turma do professor:");
-        for (Curso curso : cursos) {
-            System.out.println(curso); //imprime o curso
-            for (Aluno aluno : curso.getAlunos())
-                System.out.println(aluno); //imprime o aluno
+        for (Turma turma : DadosTurmas.listaTurmas) { // percorre as turmas
+            if (turma.getCurso().getProfessor().equals(this)) { // encontra o professor
+                turma.listarAlunos();
+            }
         }
     }
 
