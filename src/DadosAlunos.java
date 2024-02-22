@@ -47,7 +47,7 @@ public class DadosAlunos {
 
     public static void listarAlunos() {
         for (Aluno aluno : listaAlunos) {
-            System.out.println("[" + aluno.getIdAluno() + "] - " + aluno.getNome());
+            System.out.println("[" + aluno.getIdAluno() + "] - " + aluno.getNome() + " | " + "Matrícula: " + aluno.getStatusMatricula());
         }
     }
 

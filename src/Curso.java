@@ -115,11 +115,7 @@ public class Curso {
 
     @Override
     public String toString() {
-        return "Curso{" +
-                "nomeCurso='" + nomeCurso + '\'' +
-                ", professor=" + professor +
-                ", alunos=" + alunos +
-                '}';
+        return nomeCurso;
     }
 
     public void adicionarAluno(Aluno aluno) {

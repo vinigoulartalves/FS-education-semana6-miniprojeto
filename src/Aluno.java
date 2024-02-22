@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -6,11 +7,12 @@ public class Aluno {
 
     private static int idGeral = 0;
     private int idAluno;
-    private StatusMatricula statusMatricula = StatusMatricula.TRANCADO;
+    private StatusMatricula statusMatricula = StatusMatricula.ATIVO;
     private String nome;
     private int idade;
 
-    public Aluno() {}
+    public Aluno() {
+    }
 
     public Aluno(String nome, int idade) {
         this.nome = nome;
@@ -65,15 +67,26 @@ public class Aluno {
     }
 
     //Lista os cursos em que o aluno está matriculado
-    public List<Curso> listarCursos(List<Curso> cursos) {
-        List<Curso> cursosdoaluno = new ArrayList<>();
-        for (Curso curso:cursos){ //percorre a lista dos cursos
-            if (curso.getAlunos().contains(this)){ //procurando o aluno na lista
-                cursosdoaluno.add(curso);//adicionando o curso na lista de curso desse aluno
+//    public List<Curso> listarCursos(List<Curso> cursos) {
+//        List<Curso> cursosdoaluno = new ArrayList<>();
+//        for (Curso curso : cursos) { //percorre a lista dos cursos
+//            if (curso.getAlunos().contains(this)) { //procurando o aluno na lista
+//                cursosdoaluno.add(curso);//adicionando o curso na lista de curso desse aluno
+//            }
+//        }
+//        return cursosdoaluno;
+//    }
+
+    public void listarCursosDoAluno() {
+        for (Turma turma : DadosTurmas.listaTurmas) {
+            for (Aluno aluno : turma.listaAlunos) {
+                if (aluno.getIdAluno() == this.getIdAluno()) {
+                    System.out.println(turma.getCurso());
+                }
             }
         }
-        return cursosdoaluno;
     }
+
 
     //Adiciona um curso à lista de cursos
     public void adicionarCurso(Curso curso) {
@@ -85,32 +98,45 @@ public class Aluno {
         curso.removerAluno(this);
     }
 
-    //Altera o status de matrícula do aluno para trancado
-    public void trancarConta() {
-        if (statusMatricula == StatusMatricula.TRANCADO) {
-            System.out.println("A matrícula já está trancada.");
-        } else {
-            statusMatricula = StatusMatricula.TRANCADO;
-            System.out.println("Matrícula trancada com sucesso.");
-        }
-    }
-
-    //Altera o status de matrícula do aluno para ativo
-    public void ativarConta() {
-        if (statusMatricula == StatusMatricula.ATIVO) {
-            System.out.println("A matrícula já está ativa.");
-        } else {
-            statusMatricula = StatusMatricula.ATIVO;
-            System.out.println("Matrícula ativada com sucesso.");
-        }
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Aluno aluno = (Aluno) o;
         return idAluno == aluno.idAluno;
+    }
+
+    public void promover() {
+        if (statusMatricula.equals(statusMatricula.ATIVO)) {
+            statusMatricula = statusMatricula.FORMADO;
+            System.out.println("O aluno " + this.nome + " agora está formado!");
+        } else if (statusMatricula.equals(statusMatricula.TRANCADO)) {
+            System.out.println("O aluno " + this.nome + " está com a matrícula trancada!");
+        } else {
+            System.out.println("O aluno " + this.nome + " ja é formado!");
+        }
+    }
+
+    public void trancarMatricula() {
+        if (statusMatricula.equals(statusMatricula.ATIVO)) {
+            statusMatricula = statusMatricula.TRANCADO;
+            System.out.println("O aluno " + this.nome + " agora está com a matrícula trancada!");
+        } else if (statusMatricula.equals(statusMatricula.TRANCADO)) {
+            System.out.println("O aluno " + this.nome + " ja está com a matrícula trancada!");
+        } else {
+            System.out.println("O aluno " + this.nome + " ja é formado!");
+        }
+    }
+
+    public void ativarMatricula() {
+        if (statusMatricula.equals(statusMatricula.TRANCADO)) {
+            statusMatricula = statusMatricula.ATIVO;
+            System.out.println("O aluno " + this.nome + " agora está com a matrícula ativa!");
+        } else if (statusMatricula.equals(statusMatricula.ATIVO)) {
+            System.out.println("O aluno " + this.nome + " ja está com a matrícula ativa!");
+        } else {
+            System.out.println("O aluno " + this.nome + " ja é formado!");
+        }
     }
 
     @Override
@@ -120,10 +146,6 @@ public class Aluno {
 
     @Override
     public String toString() {
-        return "Aluno{" +
-                "idAluno=" + idAluno +
-                ", nome='" + nome + '\'' +
-                ", idade=" + idade +
-                '}';
+        return "[" + idAluno + "]" + " | Nome: " + nome + " | Idade: " + idade + " anos";
     }
 }

@@ -17,6 +17,7 @@ public class DadosTurmas {
             System.out.println("Ano de criação: " + turma.getAnoCriacao());
 
             System.out.println("\nAlunos: ");
+            System.out.println("----------------------");
             for (Aluno aluno : turma.getCurso().getAlunos()) {
                 System.out.println(" [" + aluno.getIdAluno() + "] - " + aluno.getNome());
                 System.out.println();

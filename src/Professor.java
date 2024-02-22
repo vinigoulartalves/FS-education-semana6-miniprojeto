@@ -91,7 +91,7 @@ public class Professor extends Funcionario {
 
     @Override
     public String toString() {
-        return "Professor{" + "nome='" + super.getNome() + '\'' + ", idade=" + idade + ", tempoTrabalho=" + tempoTrabalho + '}';
+        return super.getNome() + " | Idade: " + idade;
     }
 }
 

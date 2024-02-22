@@ -34,14 +34,14 @@ public class Main {
     public static void menuLogin() {
 
         Scanner entrada = new Scanner(System.in);
-
+        System.out.println();
         System.out.println("+----------------------------+");
         System.out.println("|         MENU LOGIN         |");
         System.out.println("+----------------------------+");
-        System.out.println("| 1. FUNCIONÁRIO             |");
-        System.out.println("| 2. ALUNO                   |");
+        System.out.println("| 1 - FUNCIONÁRIO            |");
+        System.out.println("| 2 - ALUNO                  |");
         System.out.println("+----------------------------+");
-        System.out.println("| 0. Sair                    |");
+        System.out.println("| 0 - SAIR                   |");
         System.out.println("+----------------------------+");
         System.out.print("SELECIONE UMA OPÇÃO: ");
 
@@ -54,9 +54,7 @@ public class Main {
                 menuFuncionario();
                 break;
             case 2:
-                System.out.println("MENU ALUNO");
                 menuAluno();
-                //TODO Menu aluno
                 break;
             case 0:
                 System.exit(1);
@@ -65,22 +63,20 @@ public class Main {
                 System.out.println("Valor inválido! Escolha uma opção válida!");
                 break;
         }
-        //entrada.close();
         menuLogin();
-
     }
 
     public static void menuFuncionario() {
 
         Scanner entrada = new Scanner(System.in);
-
+        System.out.println();
         System.out.println("+----------------------------+");
         System.out.println("|      MENU FUNCIONÁRIO      |");
         System.out.println("+----------------------------+");
-        System.out.println("| 1. DIRETOR                 |");
-        System.out.println("| 2. PROFESSOR               |");
+        System.out.println("| 1 - DIRETOR                |");
+        System.out.println("| 2 - PROFESSOR              |");
         System.out.println("+----------------------------+");
-        System.out.println("| 0. VOLTAR                  |");
+        System.out.println("| 0 - VOLTAR                 |");
         System.out.println("+----------------------------+");
         System.out.print("SELECIONE UMA OPÇÃO: ");
 
@@ -91,13 +87,12 @@ public class Main {
         switch (escolhaMenu) {
             case 1:
                 menuDiretor();
-                //TODO Menu diretor
                 break;
             case 2:
                 menuProfessor();
-                //TODO Menu professor
                 break;
             case 0:
+                menuLogin();
                 return;
             default:
                 System.out.println("Valor inválido! Escolha uma opção válida!");
@@ -108,12 +103,12 @@ public class Main {
 
     public static void menuDiretor() {
         Scanner entrada = new Scanner(System.in);
-
+        System.out.println();
         System.out.println("+----------------------------+");
         System.out.println("|        MENU DIRETOR        |");
         System.out.println("+----------------------------+");
-        System.out.println("| 1 - CADASTRAR DIRETOR:     |");
-        System.out.println("| 2 - DIRETOR EXISTENTE:     |");
+        System.out.println("| 1 - CADASTRAR DIRETOR      |");
+        System.out.println("| 2 - DIRETOR EXISTENTE      |");
         System.out.println("+----------------------------+");
         System.out.println("| 0 - VOLTAR                 |");
         System.out.println("+----------------------------+");
@@ -125,33 +120,31 @@ public class Main {
 
         switch (escolhaMenu) {
             case 1:
-                System.out.println("Metodo cadastro diretor");
-
                 Diretor novoDiretor = new Diretor();
                 DadosDiretores.adicionarDiretor(novoDiretor, entrada);
-
                 break;
             case 2:
                 Diretor diretorEscolhido = DadosDiretores.buscarIdDiretor(entrada);
                 menuAcoesDiretor(diretorEscolhido);
-
                 break;
             case 0:
+                menuFuncionario();
                 return;
             default:
                 System.out.println("Valor inválido! Escolha uma opção válida!");
                 break;
         }
+        menuDiretor();
     }
 
     public static void menuProfessor() {
         Scanner entrada = new Scanner(System.in);
-
+        System.out.println();
         System.out.println("+----------------------------+");
         System.out.println("|        MENU PROFESSOR      |");
         System.out.println("+----------------------------+");
-        System.out.println("| 1 - CADASTRAR PROFESSOR:   |");
-        System.out.println("| 2 - PROFESSOR EXISTENTE:   |");
+        System.out.println("| 1 - CADASTRAR PROFESSOR    |");
+        System.out.println("| 2 - PROFESSOR EXISTENTE    |");
         System.out.println("+----------------------------+");
         System.out.println("| 0 - VOLTAR                 |");
         System.out.println("+----------------------------+");
@@ -163,40 +156,32 @@ public class Main {
 
         switch (escolhaMenu) {
             case 1:
-                System.out.println("Metodo cadastro professor");
-
                 Professor novoProfessor = new Professor();
                 DadosProfessores.adicionarProfessor(novoProfessor, entrada);
-
-                //TODO Metodo cadastro de professor
                 break;
             case 2:
-                System.out.println("Menu de professor");
-
                 Professor professorEscolhido = DadosProfessores.buscarIdProfessor(entrada);
                 System.out.println(professorEscolhido.getNome());
-
-
-                //TODO Menu de professor
+                menuAcoesProfessor(professorEscolhido);
                 break;
             case 0:
-
+                menuFuncionario();
                 return;
             default:
                 System.out.println("Valor inválido! Escolha uma opção válida!");
                 break;
         }
-
+        menuProfessor();
     }
 
     public static void menuAluno() {
         Scanner entrada = new Scanner(System.in);
-
+        System.out.println();
         System.out.println("+----------------------------+");
         System.out.println("|          MENU ALUNO        |");
         System.out.println("+----------------------------+");
-        System.out.println("| 1 - CADASTRAR ALUNO:       |");
-        System.out.println("| 2 - ALUNO EXISTENTE:       |");
+        System.out.println("| 1 - CADASTRAR ALUNO        |");
+        System.out.println("| 2 - ALUNO EXISTENTE        |");
         System.out.println("+----------------------------+");
         System.out.println("| 0 - VOLTAR                 |");
         System.out.println("+----------------------------+");
@@ -208,33 +193,28 @@ public class Main {
 
         switch (escolhaMenu) {
             case 1:
-                System.out.println("Metodo cadastro aluno");
-
                 Aluno novoAluno = new Aluno();
                 DadosAlunos.adicionarAluno(novoAluno, entrada);
-
-                //TODO Metodo cadastro de aluno
                 break;
             case 2:
-                System.out.println("Menu de aluno");
-
                 Aluno alunoEscolhido = DadosAlunos.buscarIdAluno(entrada);
                 System.out.println("Bem Vindo " + alunoEscolhido.getNome() + "!");
-
-                //TODO Menu de aluno
+                menuAcoesAluno(alunoEscolhido);
                 break;
             case 0:
+                menuLogin();
                 return;
             default:
                 System.out.println("Valor inválido! Escolha uma opção válida!");
                 break;
         }
+        menuAluno();
     }
 
     public static void subMenuDiretorProfessor(Diretor diretorEscolhido) {
 
         Scanner entrada = new Scanner(System.in);
-
+        System.out.println();
         System.out.println("+----------------------------+");
         System.out.println("|    GERENCIAR PROFESSORES   |");
         System.out.println("+----------------------------+");
@@ -245,7 +225,6 @@ public class Main {
         System.out.println("+----------------------------+");
         System.out.println("| 0 - VOLTAR                 |");
         System.out.println("+----------------------------+");
-
         System.out.println();
         System.out.print("SELECIONE UMA OPÇÃO: ");
         int escolhaMenu = entrada.nextInt();
@@ -254,23 +233,19 @@ public class Main {
 
         switch (escolhaMenu) {
             case 1:
-                System.out.println("ADICONAR PROFESSOR");
                 DadosProfessores.adicionarProfessor(entrada);
                 break;
             case 2:
-                System.out.println("REMOVER PROFESSOR");
                 DadosProfessores.removerProfessor(entrada);
                 break;
             case 3:
-                System.out.println("PROMOVER PROFESSOR");
                 Diretor.promoverProfessor(entrada);
                 break;
             case 4:
-                System.out.println("LISTAR PROFESSORES");
                 DadosProfessores.listarProfessores();
                 break;
             case 0:
-                menuDiretor();
+                menuAcoesDiretor(diretorEscolhido);
                 break;
 
             default:
@@ -283,12 +258,16 @@ public class Main {
     public static void subMenuDiretorAluno(Diretor diretorEscolhido) {
 
         Scanner entrada = new Scanner(System.in);
-
-        System.out.println("GERENCIAR ALUNOS");
-        System.out.println("1 - ADICIONAR À TURMA ");
-        System.out.println("2 - REMOVER DA TURMA");
-        System.out.println("3 - LISTAR ALUNOS");
-        System.out.println("0 - VOLTAR ");
+        System.out.println();
+        System.out.println("+----------------------------+");
+        System.out.println("|      GERENCIAR ALUNOS      |");
+        System.out.println("+----------------------------+");
+        System.out.println("| 1 - ADICIONAR À TURMA      |");
+        System.out.println("| 2 - REMOVER DA TURMA       |");
+        System.out.println("| 3 - LISTAR ALUNOS          |");
+        System.out.println("+----------------------------+");
+        System.out.println("| 0 - VOLTAR                 |");
+        System.out.println("+----------------------------+");
         System.out.println();
         System.out.print("SELECIONE UMA OPÇÃO: ");
         int escolhaMenu = entrada.nextInt();
@@ -297,34 +276,21 @@ public class Main {
 
         switch (escolhaMenu) {
             case 1:
-                System.out.println("ADICONAR ALUNO");
-
                 Aluno alunoEscolhido = DadosAlunos.buscarIdAluno(entrada);
                 Turma turmaEscolhida = DadosTurmas.buscarIdTurmas(entrada);
                 turmaEscolhida.getCurso().adicionarAluno(alunoEscolhido, turmaEscolhida);
-
                 break;
             case 2:
-                System.out.println("REMOVER ALUNO");
-
                 alunoEscolhido = DadosAlunos.buscarIdAluno(entrada);
                 turmaEscolhida = DadosTurmas.buscarIdTurmas(entrada);
                 turmaEscolhida.getCurso().removerAluno(alunoEscolhido, turmaEscolhida);
-
-                //TODO REMOVER ALUNO NÃO ESTÁ REMOVENDO ALUNO DA LISTA DA TURMA ESCOLHIDA. RETORNA MENSAGEM DE QUE O ALUNO FOI REMOVIDO, MAS NÃO O RETIRA DA LISTA!!
-
-
                 break;
             case 3:
-                System.out.println("LISTAR ALUNO");
-
                 DadosAlunos.listarAlunos();
-
                 break;
             case 0:
                 menuAcoesDiretor(diretorEscolhido);
                 break;
-
             default:
                 System.out.println("Valor inválido! Escolha uma opção válida!");
                 break;
@@ -335,12 +301,16 @@ public class Main {
     public static void subMenuDiretorTurmas(Diretor diretorEscolhido) {
 
         Scanner entrada = new Scanner(System.in);
-
-        System.out.println("GERENCIAR TURMAS");
-        System.out.println("1 - CRIAR ");
-        System.out.println("2 - REMOVER ");
-        System.out.println("3 - LISTAR ");
-        System.out.println("0 - VOLTAR ");
+        System.out.println();
+        System.out.println("+----------------------------+");
+        System.out.println("|      GERENCIAR TURMAS      |");
+        System.out.println("+----------------------------+");
+        System.out.println("| 1 - CRIAR                  |");
+        System.out.println("| 2 - REMOVER                |");
+        System.out.println("| 3 - LISTAR                 |");
+        System.out.println("+----------------------------+");
+        System.out.println("| 0 - VOLTAR                 |");
+        System.out.println("+----------------------------+");
         System.out.println();
         System.out.print("SELECIONE UMA OPÇÃO: ");
         int escolhaMenu = entrada.nextInt();
@@ -349,29 +319,17 @@ public class Main {
 
         switch (escolhaMenu) {
             case 1:
-                System.out.println("CRIAR TURMA");
-
                 Diretor.criarTurma(entrada, diretorEscolhido);
-
                 break;
             case 2:
-                System.out.println("REMOVER TURMA");
-
                 DadosTurmas.removerTurma(entrada);
-
-                //TODO AO REMOVER UMA TURMA DE ÍNDICE 1, A PRÓXIMA TURMA CRIADA, RECEBE VALOR 3 NO ÍNDICE E NÃO É POSSÍVEL REMOVER ESTA TURMA A PARTIR DO INDICE 3!!
-
                 break;
             case 3:
-                System.out.println("LISTAR TURMA");
-
                 DadosTurmas.listarTurmas();
-
                 break;
             case 0:
-
+                menuAcoesDiretor(diretorEscolhido);
                 break;
-
             default:
                 System.out.println("Valor inválido! Escolha uma opção válida!");
                 break;
@@ -382,12 +340,17 @@ public class Main {
     public static void menuAcoesDiretor(Diretor diretorEscolhido) {
 
         Scanner entrada = new Scanner(System.in);
-
-        System.out.println(diretorEscolhido.getNome());
-        System.out.println("1 - GERENCIAR PROFESSORES ");
-        System.out.println("2 - GERENCIAR ALUNOS ");
-        System.out.println("3 - GERENCIAR TURMAS ");
-        System.out.println("0 - SAIR ");
+        System.out.println();
+        System.out.println("BEM VINDO " + diretorEscolhido.getNome().toUpperCase() + "!");
+        System.out.println("+----------------------------+");
+        System.out.println("|     MENU AÇÕES DIRETOR     |");
+        System.out.println("+----------------------------+");
+        System.out.println("| 1 - GERENCIAR PROFESSORES  |");
+        System.out.println("| 2 - GERENCIAR ALUNOS       |");
+        System.out.println("| 3 - GERENCIAR TURMAS       |");
+        System.out.println("+----------------------------+");
+        System.out.println("| 0 - SAIR                   |");
+        System.out.println("+----------------------------+");
         System.out.println();
         System.out.print("SELECIONE UMA OPÇÃO: ");
         int escolhaMenu = entrada.nextInt();
@@ -396,41 +359,42 @@ public class Main {
 
         switch (escolhaMenu) {
             case 1:
-                System.out.println("Menu gerenciamento professores");
                 subMenuDiretorProfessor(diretorEscolhido);
-
-
-                //TODO Metodo gerenciamento professores
                 break;
             case 2:
-                System.out.println("Menu de aluno");
-
                 subMenuDiretorAluno(diretorEscolhido);
-                //TODO Menu de aluno
                 break;
             case 3:
                 subMenuDiretorTurmas(diretorEscolhido);
                 break;
             case 0:
+                menuLogin();
                 return;
             default:
                 System.out.println("Valor inválido! Escolha uma opção válida!");
                 break;
         }
+        menuAcoesDiretor(diretorEscolhido);
     }
 
-    public static void menuAcoesProfessor(Aluno professorEscolhido) {
+    public static void menuAcoesProfessor(Professor professorEscolhido) {
 
         // listar alunos, adicionar aluno, remover aluno da sua turma
 
         Scanner entrada = new Scanner(System.in);
-
-        System.out.println(professorEscolhido.getNome());
-        System.out.println("1 - ADICIONAR ALUNO À TURMA: ");
-        System.out.println("2 - REMOVER ALUNO DA TURMA: ");
-        System.out.println("3 - LISTAR ALUNOS: ");
-        System.out.println("--------------------------------");
-        System.out.println("0 - SAIR: ");
+        System.out.println();
+        System.out.println("BEM VINDO " + professorEscolhido.getNome().toUpperCase() + "!");
+        System.out.println("+----------------------------+");
+        System.out.println("|   MENU AÇÕES PROFESSOR     |");
+        System.out.println("+----------------------------+");
+        System.out.println("| 1 - ADICIONAR ALUNO À TURMA|");
+        System.out.println("| 2 - REMOVER ALUNO DA TURMA |");
+        System.out.println("| 3 - LISTAR ALUNOS          |");
+        System.out.println("| 4 - LISTAR TURMAS          |");
+        System.out.println("| 5 - FORMAR UM ALUNO        |");
+        System.out.println("+----------------------------+");
+        System.out.println("| 0 - SAIR                   |");
+        System.out.println("+----------------------------+");
         System.out.println();
         System.out.print("SELECIONE UMA OPÇÃO: ");
         int escolha = entrada.nextInt();
@@ -439,24 +403,33 @@ public class Main {
 
         switch (escolha) {
             case 1:
-
-                //TODO adiconar aluno a turma
+                Aluno alunoEscolhido = DadosAlunos.buscarIdAluno(entrada);
+                Turma turmaEscolhida = DadosTurmas.buscarIdTurmas(entrada);
+                turmaEscolhida.getCurso().adicionarAluno(alunoEscolhido, turmaEscolhida);
                 break;
             case 2:
-
-                //TODO remover aluno
+                alunoEscolhido = DadosAlunos.buscarIdAluno(entrada);
+                turmaEscolhida = DadosTurmas.buscarIdTurmas(entrada);
+                turmaEscolhida.getCurso().removerAluno(alunoEscolhido, turmaEscolhida);
                 break;
             case 3:
-
-                //TODO listar alunos
+                DadosAlunos.listarAlunos();
+                break;
+            case 4:
+                DadosTurmas.listarTurmas();
+                break;
+            case 5:
+                alunoEscolhido = DadosAlunos.buscarIdAluno(entrada);
+                alunoEscolhido.promover();
                 break;
             case 0:
-
+                menuLogin();
                 break;
             default:
                 System.out.println("Valor inválido! Escolha uma opção válida!");
                 break;
         }
+        menuAcoesProfessor(professorEscolhido);
     }
 
     public static void menuAcoesAluno(Aluno alunoEscolhido) {
@@ -464,14 +437,19 @@ public class Main {
         // listar curso, adicionar curso, remover curso, também pode trancar ou ativar sua conta
 
         Scanner entrada = new Scanner(System.in);
-
-        System.out.println(alunoEscolhido.getNome());
-        System.out.println("1 - LISTAR CURSOS: ");
-        System.out.println("2 - ADICIONAR CURSO: ");
-        System.out.println("3 - REMOVER CURSO: ");
-        System.out.println("4 - TRANCAR MATRICULA: ");
-        System.out.println("5 - ATIVAR MATRICULA: ");
-        System.out.println("0 - SAIR: ");
+        System.out.println();
+        System.out.println("BEM VINDO " + alunoEscolhido.getNome().toUpperCase() + "!");
+        System.out.println("+----------------------------+");
+        System.out.println("|      MENU AÇÕES ALUNO      |");
+        System.out.println("+----------------------------+");
+        System.out.println("| 1 - LISTAR MEUS CURSOS     |");
+        System.out.println("| 2 - ADICIONAR CURSO        |");
+        System.out.println("| 3 - REMOVER CURSO          |");
+        System.out.println("| 4 - TRANCAR MATRICULA      |");
+        System.out.println("| 5 - ATIVAR MATRICULA       |");
+        System.out.println("+----------------------------+");
+        System.out.println("| 0 - SAIR                   |");
+        System.out.println("+----------------------------+");
         System.out.println();
         System.out.print("SELECIONE UMA OPÇÃO: ");
         int escolha = entrada.nextInt();
@@ -480,33 +458,35 @@ public class Main {
 
         switch (escolha) {
             case 1:
-
-                //TODO listar cursos
+                alunoEscolhido.listarCursosDoAluno();
                 break;
             case 2:
-
-                //TODO add cursos
+                Turma turmaEscolhida = DadosTurmas.buscarIdTurmas(entrada);
+                turmaEscolhida.getCurso().adicionarAluno(alunoEscolhido, turmaEscolhida);
                 break;
             case 3:
-
-                //TODO remover cursos
+                turmaEscolhida = DadosTurmas.buscarIdTurmas(entrada);
+                turmaEscolhida.getCurso().removerAluno(alunoEscolhido, turmaEscolhida);
                 break;
             case 4:
-
-                //TODO trancar matricula
+                alunoEscolhido.trancarMatricula();
                 break;
             case 5:
-
-                //TODO Menu ativar matricula
+                alunoEscolhido.ativarMatricula();
                 break;
             case 0:
-                //TODO Sair
+                menuLogin();
                 return;
             default:
                 System.out.println("Valor inválido! Escolha uma opção válida!");
                 break;
         }
+        menuAcoesAluno(alunoEscolhido);
     }
 
 }
+
+//TODO RETORNAR LISTA DE CURSOS DO ALUNO VAZIA
+//TODO REMOVER CURSOS DO ALUNO, SOMENTE OS CURSOS EM QUE ELE ESTIVER MATRICULADO
+//TODO TRY CATCH E VALIDAÇÕES DE ENTRADA
 
