@@ -17,11 +17,11 @@ public class DadosTurmas {
             System.out.println("Ano de criação: " + turma.getAnoCriacao());
 
             System.out.println("\nAlunos: ");
-            System.out.println("----------------------");
             for (Aluno aluno : turma.getCurso().getAlunos()) {
                 System.out.println(" [" + aluno.getIdAluno() + "] - " + aluno.getNome());
-                System.out.println();
             }
+            System.out.println("----------------------");
+            System.out.println();
         }
     }
 
@@ -43,27 +43,6 @@ public class DadosTurmas {
         return turmaEscolhida;
     }
 
-//    public static Turma buscarIdTurmaTeste (Scanner entrada) {
-//        System.out.println("TURMAS CADASTRADAS: ");
-//        listarTurmas();
-//        System.out.println("Insira o ID da turma desejada: ");
-//
-//        int idEscolhido = entrada.nextInt();
-//        entrada.nextLine();
-//
-//        Turma turmaEscolhida = new Turma();
-//
-//        for (int i = 0; i < listaTurmas.size(); i++) {
-//            if (listaTurmas.indexOf(i) == i){
-//
-//            }
-//
-//
-//        }
-//
-//
-//
-//    }
 
     public static void removerTurma(Scanner scanner) {
         Turma turma = buscarIdTurmas(scanner);

@@ -64,11 +64,6 @@ public class DadosProfessores {
         int idProfessorEscolhido = scanner.nextInt();
         scanner.nextLine();
         Professor professorEscolhido = null;
-//        while (idProfessorEscolhido <= 0 || idProfessorEscolhido >= listaProfessores.size() + 1) {
-//            System.out.println("ID inválido. Digite um ID válido:");
-//            idProfessorEscolhido = scanner.nextInt();
-//            scanner.nextLine();
-//        }
         for (Professor professor : listaProfessores) {
             if (professor.getIdProfessor() == idProfessorEscolhido) {
                 professorEscolhido = professor;

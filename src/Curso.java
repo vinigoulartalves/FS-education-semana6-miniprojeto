@@ -19,36 +19,13 @@ public class Curso {
     public Curso() {
     }
 
-    public String getNomeCurso() {
-        return nomeCurso;
-    }
-
-    public void setNomeCurso(String nomeCurso) {
-        this.nomeCurso = nomeCurso;
-    }
 
     public Professor getProfessor() {
         return professor;
     }
 
-    public void setProfessor(Professor professor) {
-        this.professor = professor;
-    }
-
     public List<Aluno> getAlunos() {
         return alunos;
-    }
-
-    public void setAlunos(List<Aluno> alunos) {
-        this.alunos = alunos;
-    }
-
-    public Turma getTurma() {
-        return turma;
-    }
-
-    public void setTurma(Turma turma) {
-        this.turma = turma;
     }
 
     //Adiciona um aluno ao curso
@@ -60,6 +37,12 @@ public class Curso {
             turma.adicionarAluno(aluno);
             System.out.println("O aluno " + aluno + " foi adicionado ao curso.");
         }
+    }
+
+    //adicionar aluno inicial
+    public void adicionarAlunoInicial(Aluno aluno, Turma turma) {
+        alunos.add(aluno);
+        turma.adicionarAluno(aluno);
     }
 
     //Remover um aluno do curso

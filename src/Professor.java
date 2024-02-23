@@ -53,21 +53,6 @@ public class Professor extends Funcionario {
         super.setNome(nome);
     }
 
-    public int getIdade() {
-        return idade;
-    }
-
-    public void setIdade(int idade) {
-        this.idade = idade;
-    }
-
-    public int getTempoTrabalho() {
-        return tempoTrabalho;
-    }
-
-    public void setTempoTrabalho(int tempoTrabalho) {
-        this.tempoTrabalho = tempoTrabalho;
-    }
 
     // Listar os alunos
     public void listarAlunos() {
@@ -79,15 +64,6 @@ public class Professor extends Funcionario {
         }
     }
 
-    // Adicionar um aluno à turma
-    public void adicionarAluno (Curso curso, Aluno aluno) {
-        curso.adicionarAluno(aluno);
-    }
-
-    //Remover um aluno da turma do professor
-    public void removerAluno (Curso curso, Aluno aluno) {
-        curso.removerAluno(aluno);
-    }
 
     @Override
     public String toString() {

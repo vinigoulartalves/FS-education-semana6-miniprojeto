@@ -38,10 +38,6 @@ public class Aluno {
         return statusMatricula;
     }
 
-    public void setStatusMatricula(StatusMatricula statusMatricula) {
-        this.statusMatricula = statusMatricula;
-    }
-
     public int getIdAluno() {
         return idAluno;
     }
@@ -54,29 +50,6 @@ public class Aluno {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public int getIdade() {
-        return idade;
-    }
-
-    public void setIdade(int idade) {
-        this.idade = idade;
-    }
-
-    //Lista os cursos em que o aluno está matriculado
-//    public List<Curso> listarCursos(List<Curso> cursos) {
-//        List<Curso> cursosdoaluno = new ArrayList<>();
-//        for (Curso curso : cursos) { //percorre a lista dos cursos
-//            if (curso.getAlunos().contains(this)) { //procurando o aluno na lista
-//                cursosdoaluno.add(curso);//adicionando o curso na lista de curso desse aluno
-//            }
-//        }
-//        return cursosdoaluno;
-//    }
-
     public void listarCursosDoAluno() {
         for (Turma turma : DadosTurmas.listaTurmas) {
             for (Aluno aluno : turma.listaAlunos) {
@@ -85,17 +58,6 @@ public class Aluno {
                 }
             }
         }
-    }
-
-
-    //Adiciona um curso à lista de cursos
-    public void adicionarCurso(Curso curso) {
-        curso.adicionarAluno(this);
-    }
-
-    //Remove um curso da lista de cursos
-    public void removerCurso(Curso curso) {
-        curso.removerAluno(this);
     }
 
     @Override

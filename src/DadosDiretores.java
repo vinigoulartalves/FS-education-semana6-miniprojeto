@@ -37,11 +37,7 @@ public class DadosDiretores {
         int idDiretorEscolhido = scanner.nextInt();
         scanner.nextLine();
         Diretor diretorEscolhido = null;
-//        while (idDiretorEscolhido <= 0 || idDiretorEscolhido >= listaDiretores.size() + 1) {
-//            System.out.println("ID inválido. Digite um ID válido:");
-//            idDiretorEscolhido = scanner.nextInt();
-//            scanner.nextLine();
-//        }
+
         for (Diretor diretor : listaDiretores) {
             if (diretor.getIdDiretor() == idDiretorEscolhido) {
                 diretorEscolhido = diretor;

@@ -19,33 +19,6 @@ public class Diretor extends Funcionario{
         setIdDiretor(idGeral);
     }
 
-    public static void addProfEmDados(Scanner scanner) {
-        Professor professor = DadosProfessores.buscarIdProfessor(scanner);
-        DadosProfessores.adicionarProfessor(professor, scanner);
-    }
-
-    public static void removerProfEmDados(Scanner scanner) {
-        Professor professor = DadosProfessores.buscarIdProfessor(scanner);
-        DadosProfessores.removerProfessor(scanner);
-    }
-
-    public static void addAlunoEmDados(Scanner scanner) {
-        Aluno aluno = DadosAlunos.buscarIdAluno(scanner);
-        DadosAlunos.adicionarAluno(aluno, scanner);
-    }
-
-    public static void removerAlunoEmDados(Scanner scanner) {
-        Aluno aluno = DadosAlunos.buscarIdAluno(scanner);
-        DadosAlunos.removerAluno(scanner);
-    }
-
-    public static void listarProfessores() {
-        DadosProfessores.listarProfessores();
-    }
-
-    public static void listarAlunos() {
-        DadosAlunos.listarAlunos();
-    }
 
     public static void promoverProfessor(Scanner scanner) {
         Professor professor = DadosProfessores.buscarIdProfessor(scanner);
@@ -75,13 +48,6 @@ public class Diretor extends Funcionario{
         this.idDiretor = idDiretor;
     }
 
-    public int getTempoTrabalho() {
-        return tempoTrabalho;
-    }
-
-    public void setTempoTrabalho(int tempoTrabalho) {
-        this.tempoTrabalho = tempoTrabalho;
-    }
 
     @Override
     public String toString() {

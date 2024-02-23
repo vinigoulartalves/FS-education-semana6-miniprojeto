@@ -49,29 +49,12 @@ public class Turma {
     public void listarAlunos() {
         for (Aluno aluno : listaAlunos) {
             System.out.println("Nome: " + aluno);
-            System.out.println("Id: " + aluno + "\n");
+            System.out.println("Id: " + aluno);
         }
     }
 
     public void adicionarAluno(Aluno aluno) {
         listaAlunos.add(aluno);
-    }
-
-    public void removerAluno(Scanner scanner) {
-        System.out.println("Digite o id do aluno que você quer remover");
-        listarAlunos();
-
-        int idAluno = scanner.nextInt();
-        scanner.nextLine();
-        Aluno alunoEscolhido = null;
-
-        for (Aluno aluno : listaAlunos) {
-            if (aluno.getIdAluno() == idAluno) {
-                alunoEscolhido = aluno;
-            }
-        }
-
-        listaAlunos.remove(alunoEscolhido);
     }
 
     public Turma adicionarTurma(Curso curso, Scanner entrada) {
@@ -87,7 +70,6 @@ public class Turma {
         setCurso(curso);
 
         return new Turma(curso, anoCriacao);
-
     }
 
 
