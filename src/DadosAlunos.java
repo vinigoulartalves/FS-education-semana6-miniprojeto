@@ -31,10 +31,7 @@ public class DadosAlunos {
         int idAlunoEscolhido = scanner.nextInt();
         scanner.nextLine();
         Aluno alunoEscolhido = null;
-        while (idAlunoEscolhido <= 0 || idAlunoEscolhido >= listaAlunos.size() + 1) {
-            System.out.println("ID inválido. Digite um ID válido:");
-            idAlunoEscolhido = scanner.nextInt();
-        }
+
         for (Aluno aluno : listaAlunos) {
             if (aluno.getIdAluno() == idAlunoEscolhido) {
                 alunoEscolhido = aluno;
@@ -46,7 +43,7 @@ public class DadosAlunos {
 
     public static void listarAlunos() {
         for (Aluno aluno : listaAlunos) {
-            System.out.println("[" + aluno.getIdAluno() + "] - " + aluno.getNome());
+            System.out.println("[" + aluno.getIdAluno() + "] - " + aluno.getNome() + " | " + "Matrícula: " + aluno.getStatusMatricula());
         }
     }
 

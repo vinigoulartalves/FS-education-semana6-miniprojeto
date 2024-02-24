@@ -8,10 +8,11 @@ public class Professor extends Funcionario {
     private int idade;
     private int tempoTrabalho;
 
-    public Professor(){}
+    public Professor() {
+    }
 
-    public Professor(String nome,  double salario, int tempoTrabalho, int idade) {
-        super (nome, salario);
+    public Professor(String nome, double salario, int tempoTrabalho, int idade) {
+        super(nome, salario);
         this.tempoTrabalho = tempoTrabalho;
         this.idade = idade;
 
@@ -31,6 +32,11 @@ public class Professor extends Funcionario {
         }
     }
 
+    public static CargoFuncinario getStatusProfessor(Professor professor) {
+
+        return professor.getCargoFuncinario();
+    }
+
     public int getIdProfessor() {
         return idProfessor;
     }
@@ -47,21 +53,6 @@ public class Professor extends Funcionario {
         super.setNome(nome);
     }
 
-    public int getIdade() {
-        return idade;
-    }
-
-    public void setIdade(int idade) {
-        this.idade = idade;
-    }
-
-    public int getTempoTrabalho() {
-        return tempoTrabalho;
-    }
-
-    public void setTempoTrabalho(int tempoTrabalho) {
-        this.tempoTrabalho = tempoTrabalho;
-    }
 
     // Listar os alunos
     public void listarAlunos() {
@@ -73,19 +64,10 @@ public class Professor extends Funcionario {
         }
     }
 
-    // Adicionar um aluno à turma
-    public void adicionarAluno(Curso curso, Aluno aluno) {
-        curso.adicionarAluno(aluno);
-    }
-
-    //Remover um aluno da turma do professor
-    public void removerAluno(Curso curso, Aluno aluno) {
-        curso.removerAluno(aluno);
-    }
 
     @Override
     public String toString() {
-        return "Professor{" + "nome='" + super.getNome() + '\'' + ", idade=" + idade + ", tempoTrabalho=" + tempoTrabalho + '}';
+        return super.getNome() + " | Idade: " + idade;
     }
 }
 
