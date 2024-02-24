@@ -32,10 +32,7 @@ public class Diretor extends Funcionario{
         Turma turma = new Turma();
 
         curso.adicionarCurso(scanner, turma);
-
-        curso = curso.adicionarCurso(scanner, turma);
         turma = turma.adicionarTurma(curso, scanner);
-
 
         DadosTurmas.adicionarTurma(turma);
     }

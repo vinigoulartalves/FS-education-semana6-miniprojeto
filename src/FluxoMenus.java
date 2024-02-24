@@ -29,7 +29,6 @@ public class FluxoMenus {
         DadosAlunos.listaAlunos.add(aluno1);
         Aluno aluno2 = new Aluno("Bruna Mainardes (PROCURA-SE)", 27);
 //        turmaAbc1.getCurso().adicionarAlunoInicial(aluno2, turmaAbc1);
-        aluno2.trancarMatricula();
         DadosAlunos.listaAlunos.add(aluno2);
         Aluno aluno3 = new Aluno("João Batista", 20);
         turmaAbc2.getCurso().adicionarAlunoInicial(aluno3, turmaAbc2);
@@ -237,7 +236,6 @@ public class FluxoMenus {
                     break;
                 case 2:
                     Aluno alunoEscolhido = DadosAlunos.buscarIdAluno(entrada);
-                    System.out.println("Bem Vindo " + alunoEscolhido.getNome() + "!");
                     menuAcoesAluno(alunoEscolhido);
                     break;
                 case 0:
@@ -472,7 +470,7 @@ public class FluxoMenus {
                     break;
                 case 2:
                     alunoEscolhido = DadosAlunos.buscarIdAluno(entrada);
-                    turmaEscolhida = DadosTurmas.buscarIdTurmas(entrada);
+                    turmaEscolhida = DadosTurmas.buscarIdTurmasMatriculado(entrada, alunoEscolhido);
                     turmaEscolhida.getCurso().removerAluno(alunoEscolhido, turmaEscolhida);
                     break;
                 case 3:

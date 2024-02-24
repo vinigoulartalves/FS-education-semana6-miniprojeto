@@ -86,7 +86,6 @@ public class Curso {
     public Curso adicionarCurso(Scanner entrada, Turma turma) {
         entrada = new Scanner(System.in);
 
-
         System.out.println("Insira o nome: ");
         this.nomeCurso = entrada.nextLine();
         this.professor = this.menuCriacaoTurma(entrada);
